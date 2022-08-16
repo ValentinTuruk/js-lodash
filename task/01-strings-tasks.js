@@ -22,8 +22,8 @@
  *   '',  'bb'  => 'bb'
  */
 function concatenateStrings(value1, value2) {
-    
-    if (typeof value1 === 'string' && typeof value2 === 'string' ) {
+
+    if (typeof value1 === 'string' && typeof value2 === 'string') {
         if (value1 && value2) {
             return value1 + value2;
         } else if (value1 && !value2) {
@@ -74,8 +74,14 @@ getStringLength('eightttt')
  *   'Chuck','Norris'  => 'Hello, Chuck Norris!'
  */
 function getStringFromTemplate(firstName, lastName) {
-    throw new Error('Not implemented');
+    if (typeof firstName === 'string' && typeof lastName === 'string') {
+        return (`Hello, ${firstName} ${lastName}!`)
+    } else {
+        throw new Error('Entered data is invalid');
+    }
 }
+
+getStringFromTemplate('Valentin', 'Turuk')
 
 /**
  * Extracts a name from template string 'Hello, First_Name Last_Name!'.
@@ -309,4 +315,4 @@ module.exports = {
 };
 
 
- 
+
