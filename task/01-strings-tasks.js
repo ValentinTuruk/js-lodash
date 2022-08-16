@@ -22,15 +22,19 @@
  *   '',  'bb'  => 'bb'
  */
 function concatenateStrings(value1, value2) {
-    throw new Error('Not implemented');
     
-    if (value1 && value2) {
-        return value1 + value2;
-    } else if (value1 && !value2) {
-        return value1;
-    } else if (!value1 && value2) {
-        return value2;
+    if (typeof value1 === 'string' && typeof value2 === 'string' ) {
+        if (value1 && value2) {
+            return value1 + value2;
+        } else if (value1 && !value2) {
+            return value1;
+        } else if (!value1 && value2) {
+            return value2;
+        }
+    } else {
+        throw new Error('Entered data is invalid');
     }
+    
 
 }
 
