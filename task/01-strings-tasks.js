@@ -145,7 +145,7 @@ function removeLeadingAndTrailingWhitespaces(value) {
 removeLeadingAndTrailingWhitespaces('\tHello, World!   ')
 
 /**
- * Returns a string that repeated the specified number of times.
+ * 7) Returns a string that repeated the specified number of times.
  *
  * @param {string} value
  * @param {string} count
@@ -156,8 +156,14 @@ removeLeadingAndTrailingWhitespaces('\tHello, World!   ')
  *   'cat', 3 => 'catcatcat'
  */
 function repeatString(value, count) {
-    throw new Error('Not implemented');
+    if (typeof value === 'string' && typeof count === 'number') {
+        return (`${value.repeat(count)}`)
+    } else {
+        throw new Error('Entered data is invalid');
+    }
 }
+
+repeatString('Valentin', 2)
 
 /**
  * Remove the first occurrence of string inside another string
