@@ -58,7 +58,7 @@ function getStringLength(value) {
     }
 }
 
-getStringLength('eightttt')
+getStringLength('eightttt');
 
 /**
  * 3) Returns the result of string template and given parameters firstName and lastName.
@@ -81,7 +81,7 @@ function getStringFromTemplate(firstName, lastName) {
     }
 }
 
-getStringFromTemplate('Valentin', 'Turuk')
+getStringFromTemplate('Valentin', 'Turuk');
 
 /**
  * 4) Extracts a name from template string 'Hello, First_Name Last_Name!'.
@@ -101,7 +101,7 @@ function extractNameFromTemplate(value) {
     }
 }
 
-extractNameFromTemplate('Hello, Valentin Turuk!')
+extractNameFromTemplate('Hello, Valentin Turuk!');
 
 /**
  * 5) Returns a first char of the given string.
@@ -121,7 +121,7 @@ function getFirstChar(value) {
     }
 }
 
-getFirstChar('Valentin Turuk')
+getFirstChar('Valentin Turuk');
 
 /**
  * 6) Removes a leading and trailing whitespace characters from string.
@@ -142,7 +142,7 @@ function removeLeadingAndTrailingWhitespaces(value) {
     }
 }
 
-removeLeadingAndTrailingWhitespaces('\tHello, World!   ')
+removeLeadingAndTrailingWhitespaces('\tHello, World!   ');
 
 /**
  * 7) Returns a string that repeated the specified number of times.
@@ -185,10 +185,10 @@ function removeFirstOccurrences(str, value) {
     }
 }
 
-removeFirstOccurrences('I like legends', 'end')
+removeFirstOccurrences('I like legends', 'end');
 
 /**
- * Remove the first and last angle brackets from tag string
+ * 9) Remove the first and last angle brackets from tag string
  *
  * @param {string} str
  * @return {string}
@@ -199,8 +199,14 @@ removeFirstOccurrences('I like legends', 'end')
  *   '<a>' => 'a'
  */
 function unbracketTag(str) {
-    throw new Error('Not implemented');
+    if (typeof str === 'string') {
+        return (`${str.slice(1,-1)}`)
+    } else {
+        throw new Error('Entered data is invalid');
+    }
 }
+
+unbracketTag('<Valentin>');
 
 
 /**
