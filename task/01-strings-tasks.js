@@ -278,7 +278,7 @@ function getRectangleString(width, height) {
 
 
 /**
- * Encode specified string with ROT13 cipher
+ * 13) Encode specified string with ROT13 cipher
  * See details:  https://en.wikipedia.org/wiki/ROT13
  *
  * @param {string} str
@@ -297,7 +297,7 @@ function encodeToRot13(str) {
 }
 
 /**
- * Returns true if the value is string; otherwise false.
+ * 14) Returns true if the value is string; otherwise false.
  * @param {string} value
  * @return {boolean}
  *
@@ -310,9 +310,10 @@ function encodeToRot13(str) {
  *   isString(new String('test')) => true
  */
 function isString(value) {
-    throw new Error('Not implemented');
+    return typeof (`value`) === 'string' 
 }
 
+isString('Valentin')
 
 /**
  * Returns playid card id.
