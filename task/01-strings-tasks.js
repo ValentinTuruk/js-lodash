@@ -166,7 +166,7 @@ function repeatString(value, count) {
 repeatString('Valentin', 2)
 
 /**
- * Remove the first occurrence of string inside another string
+ * 8) Remove the first occurrence of string inside another string
  * 
  * @param {string} str
  * @param {string} value
@@ -178,8 +178,14 @@ repeatString('Valentin', 2)
  *   'ABABAB','BA' => 'ABAB'
  */
 function removeFirstOccurrences(str, value) {
-    throw new Error('Not implemented');
+    if (typeof str === 'string' && typeof value === 'string') {
+        return (`${str.replace(value, '')}`)
+    } else {
+        throw new Error('Entered data is invalid');
+    }
 }
+
+removeFirstOccurrences('I like legends', 'end')
 
 /**
  * Remove the first and last angle brackets from tag string
