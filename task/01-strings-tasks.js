@@ -210,7 +210,7 @@ unbracketTag('<Valentin>');
 
 
 /**
- * Converts all characters of the specified string into the upper case
+ * 10) Converts all characters of the specified string into the upper case
  *
  * @param {string} str
  * @return {string}
@@ -220,8 +220,14 @@ unbracketTag('<Valentin>');
  *  'abcdefghijklmnopqrstuvwxyz' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
  */
 function convertToUpperCase(str) {
-    throw new Error('Not implemented');
+    if (typeof str === 'string') {
+        return (`${str.toUpperCase()}`)
+    } else {
+        throw new Error('Entered data is invalid');
+    }
 }
+
+convertToUpperCase('Valentin')
 
 /**
  * Extracts e-mails from single string with e-mails list delimeted by semicolons
