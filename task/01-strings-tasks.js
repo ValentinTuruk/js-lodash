@@ -23,7 +23,18 @@
  */
 function concatenateStrings(value1, value2) {
     throw new Error('Not implemented');
+    
+    if (value1 && value2) {
+        return value1 + value2;
+    } else if (value1 && !value2) {
+        return value1;
+    } else if (!value1 && value2) {
+        return value2;
+    }
+
 }
+
+concatenateStrings(1, 2);
 
 
 /**
@@ -288,3 +299,6 @@ module.exports = {
     isString: isString,
     getCardId: getCardId
 };
+
+
+ 
