@@ -10,7 +10,7 @@
 
 
 /**
- * Returns the result of concatenation of two strings.
+ * 1) Returns the result of concatenation of two strings.
  *
  * @param {string} value1
  * @param {string} value2
@@ -40,7 +40,7 @@ concatenateStrings('aaa', 'bbb');
 
 
 /**
- * Returns the length of given string.
+ * 2) Returns the length of given string.
  *
  * @param {string} value
  * @return {number}
@@ -61,7 +61,7 @@ function getStringLength(value) {
 getStringLength('eightttt')
 
 /**
- * Returns the result of string template and given parameters firstName and lastName.
+ * 3) Returns the result of string template and given parameters firstName and lastName.
  * Please do not use concatenation, use template string :
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/template_strings
  *
@@ -84,7 +84,7 @@ function getStringFromTemplate(firstName, lastName) {
 getStringFromTemplate('Valentin', 'Turuk')
 
 /**
- * Extracts a name from template string 'Hello, First_Name Last_Name!'.
+ * 4) Extracts a name from template string 'Hello, First_Name Last_Name!'.
  *
  * @param {string} value
  * @return {string}
@@ -104,7 +104,7 @@ function extractNameFromTemplate(value) {
 extractNameFromTemplate('Hello, Valentin Turuk!')
 
 /**
- * Returns a first char of the given string.
+ * 5) Returns a first char of the given string.
  *
  * @param {string} value
  * @return {string}
@@ -124,7 +124,7 @@ function getFirstChar(value) {
 getFirstChar('Valentin Turuk')
 
 /**
- * Removes a leading and trailing whitespace characters from string.
+ * 6) Removes a leading and trailing whitespace characters from string.
  *
  * @param {string} value
  * @return {string}
@@ -135,8 +135,14 @@ getFirstChar('Valentin Turuk')
  *   '\tHello, World! ' => 'Hello, World!'
  */
 function removeLeadingAndTrailingWhitespaces(value) {
-    throw new Error('Not implemented');
+    if (typeof value === 'string') {
+        return (`${value.trim()}`)
+    } else {
+        throw new Error('Entered data is invalid');
+    }
 }
+
+removeLeadingAndTrailingWhitespaces('\tHello, World!   ')
 
 /**
  * Returns a string that repeated the specified number of times.
