@@ -94,9 +94,14 @@ getStringFromTemplate('Valentin', 'Turuk')
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
 function extractNameFromTemplate(value) {
-    throw new Error('Not implemented');
+    if (typeof value === 'string') {
+        return (`${value.slice(7,-1)}`)
+    } else {
+        throw new Error('Entered data is invalid');
+    }
 }
 
+extractNameFromTemplate('Hello, Valentin Turuk!')
 
 /**
  * Returns a first char of the given string.
