@@ -293,8 +293,33 @@ function getRectangleString(width, height) {
  *
  */
 function encodeToRot13(str) {
-    throw new Error('Not implemented');
+    if (typeof str === 'string') {
+        let iteration = [];
+        for (i of str) {
+            let letter = String.fromCodePoint(i.charCodeAt() + 13);
+            if (i >= 'A' && i <= 'Z' && letter < 'Z') {
+                iteration.push(letter);
+            } else if (i >= 'A' && i <= 'Z' && letter > 'Z') {
+                letter = String.fromCodePoint(i.charCodeAt() - 13);
+                iteration.push(letter);
+            } else if (i >= 'a' && i <= 'z' && letter < 'z') {
+                iteration.push(letter);
+            } else if (i >= 'a' && i <= 'z' && letter > 'z') {
+                letter = String.fromCodePoint(i.charCodeAt() - 13);
+                iteration.push(letter);
+            } else {
+                letter = i;
+                iteration.push(letter);
+            }
+        }
+        const result = iteration.join('');
+        return result;
+    } else {
+        throw new Error('Entered data is invalid');
+    }
 }
+
+encodeToRot13('Gb trg gb gur bgure fvqr!')
 
 /**
  * 14) Returns true if the value is string; otherwise false.
@@ -310,13 +335,13 @@ function encodeToRot13(str) {
  *   isString(new String('test')) => true
  */
 function isString(value) {
-    return typeof (`value`) === 'string' 
+    return typeof (`value`) === 'string'
 }
 
 isString('Valentin')
 
 /**
- * Returns playid card id.
+ * 15) Returns playid card id.
  * 
  * Playing cards inittial deck inclides the cards in the following order:
  * 
@@ -340,8 +365,14 @@ isString('Valentin')
  *   'K♠' => 51
  */
 function getCardId(value) {
-    throw new Error('Not implemented');
+    if (typeof value === 'string') {
+        return String.fromCharCode(value);
+    } else {
+        throw new Error('Entered data is invalid');
+    }
 }
+
+getCardId('1F0A1')
 
 
 module.exports = {
