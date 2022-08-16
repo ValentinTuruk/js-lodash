@@ -34,11 +34,9 @@ function concatenateStrings(value1, value2) {
     } else {
         throw new Error('Entered data is invalid');
     }
-    
-
 }
 
-concatenateStrings(1, 2);
+concatenateStrings('aaa', 'bbb');
 
 
 /**
@@ -53,8 +51,14 @@ concatenateStrings(1, 2);
  *   ''      => 0
  */
 function getStringLength(value) {
-    throw new Error('Not implemented');
+    if (typeof value === 'string') {
+        return value.length
+    } else {
+        throw new Error('Entered data is invalid');
+    }
 }
+
+getStringLength('eightttt')
 
 /**
  * Returns the result of string template and given parameters firstName and lastName.
