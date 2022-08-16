@@ -52,7 +52,7 @@ concatenateStrings('aaa', 'bbb');
  */
 function getStringLength(value) {
     if (typeof value === 'string') {
-        return value.length
+        return value.length;
     } else {
         throw new Error('Entered data is invalid');
     }
@@ -75,7 +75,7 @@ getStringLength('eightttt');
  */
 function getStringFromTemplate(firstName, lastName) {
     if (typeof firstName === 'string' && typeof lastName === 'string') {
-        return (`Hello, ${firstName} ${lastName}!`)
+        return (`Hello, ${firstName} ${lastName}!`);
     } else {
         throw new Error('Entered data is invalid');
     }
@@ -95,7 +95,7 @@ getStringFromTemplate('Valentin', 'Turuk');
  */
 function extractNameFromTemplate(value) {
     if (typeof value === 'string') {
-        return (`${value.slice(7, -1)}`)
+        return value.slice(7, -1);
     } else {
         throw new Error('Entered data is invalid');
     }
@@ -115,7 +115,7 @@ extractNameFromTemplate('Hello, Valentin Turuk!');
  */
 function getFirstChar(value) {
     if (typeof value === 'string') {
-        return (`${value.substr(0, 1)}`)
+        return value.substr(0, 1);
     } else {
         throw new Error('Entered data is invalid');
     }
@@ -136,7 +136,7 @@ getFirstChar('Valentin Turuk');
  */
 function removeLeadingAndTrailingWhitespaces(value) {
     if (typeof value === 'string') {
-        return (`${value.trim()}`)
+        return value.trim();
     } else {
         throw new Error('Entered data is invalid');
     }
@@ -157,7 +157,7 @@ removeLeadingAndTrailingWhitespaces('\tHello, World!   ');
  */
 function repeatString(value, count) {
     if (typeof value === 'string' && typeof count === 'number') {
-        return (`${value.repeat(count)}`)
+        return value.repeat(count);
     } else {
         throw new Error('Entered data is invalid');
     }
@@ -179,7 +179,7 @@ repeatString('Valentin', 2)
  */
 function removeFirstOccurrences(str, value) {
     if (typeof str === 'string' && typeof value === 'string') {
-        return (`${str.replace(value, '')}`)
+        return str.replace(value, '');
     } else {
         throw new Error('Entered data is invalid');
     }
@@ -200,7 +200,7 @@ removeFirstOccurrences('I like legends', 'end');
  */
 function unbracketTag(str) {
     if (typeof str === 'string') {
-        return (`${str.slice(1,-1)}`)
+        return str.slice(1, -1);
     } else {
         throw new Error('Entered data is invalid');
     }
@@ -221,16 +221,16 @@ unbracketTag('<Valentin>');
  */
 function convertToUpperCase(str) {
     if (typeof str === 'string') {
-        return (`${str.toUpperCase()}`)
+        return str.toUpperCase();
     } else {
         throw new Error('Entered data is invalid');
     }
 }
 
-convertToUpperCase('Valentin')
+convertToUpperCase('Valentin');
 
 /**
- * Extracts e-mails from single string with e-mails list delimeted by semicolons
+ * 11) Extracts e-mails from single string with e-mails list delimeted by semicolons
  *
  * @param {string} str
  * @return {array}
@@ -240,11 +240,17 @@ convertToUpperCase('Valentin')
  *   'info@gmail.com' => ['info@gmail.com']
  */
 function extractEmails(str) {
-    throw new Error('Not implemented');
+    if (typeof str === 'string') {
+        return str.split(';');
+    } else {
+        throw new Error('Entered data is invalid');
+    }
 }
 
+extractEmails('angus.young@gmail.com;brian.johnson@hotmail.com;bon.scott@yahoo.com')
+
 /**
- * Returns the string representation of rectangle with specified width and height
+ * 12) Returns the string representation of rectangle with specified width and height
  * using pseudograhic chars
  *
  * @param {number} width
