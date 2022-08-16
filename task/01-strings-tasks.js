@@ -95,7 +95,7 @@ getStringFromTemplate('Valentin', 'Turuk')
  */
 function extractNameFromTemplate(value) {
     if (typeof value === 'string') {
-        return (`${value.slice(7,-1)}`)
+        return (`${value.slice(7, -1)}`)
     } else {
         throw new Error('Entered data is invalid');
     }
@@ -114,8 +114,14 @@ extractNameFromTemplate('Hello, Valentin Turuk!')
  *   'cat'       => 'c'
  */
 function getFirstChar(value) {
-    throw new Error('Not implemented');
+    if (typeof value === 'string') {
+        return (`${value.substr(0, 1)}`)
+    } else {
+        throw new Error('Entered data is invalid');
+    }
 }
+
+getFirstChar('Valentin Turuk')
 
 /**
  * Removes a leading and trailing whitespace characters from string.
