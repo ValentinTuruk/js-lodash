@@ -152,7 +152,7 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
 getAngleBetweenVectors(1,3,4,2);
 
 /**
- * Returns a last digit of a integer number.
+ * 7) Returns a last digit of a integer number.
  *
  * @param {number} value
  * @return {number}
@@ -164,9 +164,14 @@ getAngleBetweenVectors(1,3,4,2);
  *     0     => 0
  */
 function getLastDigit(value) {
-    throw new Error('Not implemented');
+    if (typeof value === 'number') {
+        return value.toString().slice(-1);
+    } else {
+        throw new Error('Numbers should be entered');
+    }
 }
 
+getLastDigit(2654);
 
 /**
  * Returns a number by given string representation.
