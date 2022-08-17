@@ -100,7 +100,7 @@ function getDistanceBetweenPoints(x1, y1, x2, y2) {
 getDistanceBetweenPoints(-5, 0, 10 ,-10)
 
 /**
- * Returns a root of linear equation a*x + b = 0 given by coefficients a and b.
+ * 5) Returns a root of linear equation a*x + b = 0 given by coefficients a and b.
  *
  * @param {number} a
  * @param {number} b
@@ -112,8 +112,14 @@ getDistanceBetweenPoints(-5, 0, 10 ,-10)
  *   5*x = 0         => 0
  */
 function getLinearEquationRoot(a, b) {
-    throw new Error('Not implemented');
+    if (typeof a === 'number' && typeof b === 'number') {
+        return (0-b)/a;
+    } else {
+        throw new Error('Numbers should be entered');
+    }
 }
+
+getLinearEquationRoot(5, 0)
 
 
 /**
