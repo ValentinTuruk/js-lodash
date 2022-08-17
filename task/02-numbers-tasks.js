@@ -44,7 +44,7 @@ getRectangleArea(12, 12);
  */
 function getCicleCircumference(radius) {
     if (typeof radius === 'number') {
-        return 2*Math.PI*radius;
+        return 2 * Math.PI * radius;
     } else {
         throw new Error('Number should be entered');
     }
@@ -53,7 +53,7 @@ function getCicleCircumference(radius) {
 getCicleCircumference(5);
 
 /**
- * Returns an average of two given numbers.
+ * 3) Returns an average of two given numbers.
  *
  * @param {numder} value1
  * @param {number} value2
@@ -65,8 +65,14 @@ getCicleCircumference(5);
  *  -3, 3  => 0
  */
 function getAverage(value1, value2) {
-    throw new Error('Not implemented');
+    if (typeof value1 === 'number' && typeof value2 === 'number') {
+        return (value1+value2)/2;
+    } else {
+        throw new Error('Numbers should be entered');
+    }
 }
+
+getAverage(-3, 5);
 
 /**
  * Returns a distance beetween two points by cartesian coordinates.
