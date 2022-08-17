@@ -142,9 +142,7 @@ getLinearEquationRoot(5, 0)
 function getAngleBetweenVectors(x1, y1, x2, y2) {
     if (typeof x1 === 'number' && typeof x2 === 'number' && typeof y1 === 'number' && typeof y2 === 'number') {
         const cos = (x1 * x2 + y1 * y2) / (Math.sqrt(x1 ** 2 + y1 ** 2) * Math.sqrt(x2 ** 2 + y2 ** 2));
-        const angleGrag = Math.acos(cos);
-        console.log (angleGrag);
-        const angleRadians = angleGrag * Math.PI / 180;
+        const angleRadians = Math.acos(cos);        
         return angleRadians
     } else {
         throw new Error('Numbers should be entered');
