@@ -247,7 +247,7 @@ function extractEmails(str) {
     }
 }
 
-extractEmails('angus.young@gmail.com;brian.johnson@hotmail.com;bon.scott@yahoo.com')
+extractEmails('angus.young@gmail.com;brian.johnson@hotmail.com;bon.scott@yahoo.com');
 
 /**
  * 12) Returns the string representation of rectangle with specified width and height
@@ -273,9 +273,18 @@ extractEmails('angus.young@gmail.com;brian.johnson@hotmail.com;bon.scott@yahoo.c
  *
  */
 function getRectangleString(width, height) {
-    throw new Error('Not implemented');
+    if (typeof width === 'number' && typeof height === 'number') {
+        const top = '┌' + '─'.repeat(width - 2) + '┐\n';
+        const bottom = '└' + '─'.repeat(width - 2) + '┘';
+        const middle = '│' + ' '.repeat(width - 2) + '│\n';
+        const figure = `${top}${middle.repeat(height - 2)}${bottom}`;
+        console.log (figure);
+    } else {
+        throw new Error('Entered data is invalid');
+    }
 }
 
+getRectangleString(20, 13);
 
 /**
  * 13) Encode specified string with ROT13 cipher
@@ -319,7 +328,7 @@ function encodeToRot13(str) {
     }
 }
 
-encodeToRot13('Gb trg gb gur bgure fvqr!')
+encodeToRot13('Gb trg gb gur bgure fvqr!');
 
 /**
  * 14) Returns true if the value is string; otherwise false.
@@ -338,7 +347,7 @@ function isString(value) {
     return typeof (`value`) === 'string'
 }
 
-isString('Valentin')
+isString('Valentin');
 
 /**
  * 15) Returns playid card id.
@@ -376,7 +385,7 @@ function getCardId(value) {
     }
 }
 
-getCardId('7♦')
+getCardId('7♦');
 
 
 module.exports = {
