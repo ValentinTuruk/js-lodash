@@ -195,7 +195,7 @@ function parseNumberFromString(value) {
 parseNumberFromString('-525.5');
 
 /**
- * Returns a diagonal length of the rectangular parallelepiped given by its sides a,b,c.
+ * 9) Returns a diagonal length of the rectangular parallelepiped given by its sides a,b,c.
  *
  * @param {number} a
  * @param {number} b
@@ -208,8 +208,14 @@ parseNumberFromString('-525.5');
  *   1,2,3   => 3.741657386773941
  */
 function getParallelipidedDiagonal(a, b, c) {
-    throw new Error('Not implemented');
+    if (typeof a === 'number' && typeof b === 'number' && typeof c === 'number') {
+        return Math.sqrt(a**2 + b**2 + c**2);
+    } else {
+        throw new Error('Numbers should be entered');
+    }
 }
+
+getParallelipidedDiagonal(1,2,3)
 
 /**
  * Returns the number rounded to specified power of 10.
