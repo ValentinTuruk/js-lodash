@@ -264,7 +264,7 @@ roundToPowerOfTen(1678, 3);
 function isPrime(n) {
     if (typeof n === 'number' && n > 0) {
         let divideCounter = 0;
-        
+
         for (let i = 2; i < n; ++i) {
             if (n % i === 0) {
                 divideCounter += i;
@@ -277,10 +277,10 @@ function isPrime(n) {
     }
 }
 
-isPrime (113);
+isPrime(113);
 
 /**
- * Tries to convert value to number and returns it if conversion was successfull;
+ * 12) Tries to convert value to number and returns it if conversion was successfull;
  * otherwise returns default value passed as a second argument.
  *
  * @param {any} value
@@ -295,8 +295,14 @@ isPrime (113);
  *   toNumber(new Number(42), 0) => 42
  */
 function toNumber(value, def) {
-    throw new Error('Not implemented');
+    if (value >= 0 || value < 0) {
+        return +value;
+    } else {
+        return def;
+    }
 }
+
+toNumber('test', 0);
 
 module.exports = {
     getRectangleArea: getRectangleArea,
