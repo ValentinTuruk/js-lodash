@@ -174,7 +174,7 @@ function getLastDigit(value) {
 getLastDigit(2654);
 
 /**
- * Returns a number by given string representation.
+ * 8) Returns a number by given string representation.
  *
  * @param {string} value
  * @return {number}
@@ -185,8 +185,14 @@ getLastDigit(2654);
  * '-525.5'     => -525.5
  */
 function parseNumberFromString(value) {
-    throw new Error('Not implemented');
+    if (typeof value === 'string') {
+        return +value
+    } else {
+        throw new Error('Numbers should be entered');
+    }
 }
+
+parseNumberFromString('-525.5');
 
 /**
  * Returns a diagonal length of the rectangular parallelepiped given by its sides a,b,c.
