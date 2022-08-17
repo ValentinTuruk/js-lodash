@@ -75,7 +75,7 @@ function getAverage(value1, value2) {
 getAverage(-3, 5);
 
 /**
- * Returns a distance beetween two points by cartesian coordinates.
+ * 4) Returns a distance beetween two points by cartesian coordinates.
  *
  * @param {number} x1
  * @param {number} y1
@@ -90,8 +90,14 @@ getAverage(-3, 5);
  *   (-5,0) (10,-10) => 18.027756377319946
  */
 function getDistanceBetweenPoints(x1, y1, x2, y2) {
-    throw new Error('Not implemented');
+    if (typeof x1 === 'number' && typeof x2 === 'number' && typeof y1 === 'number' && typeof y2 === 'number') {
+        return Math.sqrt( (x2-x1)**2 + (y2-y1)**2 );
+    } else {
+        throw new Error('Numbers should be entered');
+    }
 }
+
+getDistanceBetweenPoints(-5, 0, 10 ,-10)
 
 /**
  * Returns a root of linear equation a*x + b = 0 given by coefficients a and b.
