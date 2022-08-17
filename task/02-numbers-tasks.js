@@ -11,7 +11,7 @@
 
 
 /**
- * Returns an area of a rectangle given by width and heigth.
+ * 1) Returns an area of a rectangle given by width and heigth.
  *
  * @param {numder} width
  * @param {number} height
@@ -22,9 +22,14 @@
  *   5, 5  => 25
  */
 function getRectangleArea(width, height) {
-    throw new Error('Not implemented');
+    if (typeof width === 'number' && typeof height === 'number') {
+        return width*height;
+    } else {
+        throw new Error('Number should be entered');
+    }    
 }
 
+getRectangleArea(12, 12);
 
 /**
  * Returns a circumference of circle given by radius.
