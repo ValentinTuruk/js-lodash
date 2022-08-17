@@ -142,14 +142,14 @@ getLinearEquationRoot(5, 0)
 function getAngleBetweenVectors(x1, y1, x2, y2) {
     if (typeof x1 === 'number' && typeof x2 === 'number' && typeof y1 === 'number' && typeof y2 === 'number') {
         const cos = (x1 * x2 + y1 * y2) / (Math.sqrt(x1 ** 2 + y1 ** 2) * Math.sqrt(x2 ** 2 + y2 ** 2));
-        const angleRadians = Math.acos(cos);        
+        const angleRadians = Math.acos(cos);
         return angleRadians
     } else {
         throw new Error('Numbers should be entered');
     }
 }
 
-getAngleBetweenVectors(1,3,4,2);
+getAngleBetweenVectors(1, 3, 4, 2);
 
 /**
  * 7) Returns a last digit of a integer number.
@@ -209,16 +209,16 @@ parseNumberFromString('-525.5');
  */
 function getParallelipidedDiagonal(a, b, c) {
     if (typeof a === 'number' && typeof b === 'number' && typeof c === 'number') {
-        return Math.sqrt(a**2 + b**2 + c**2);
+        return Math.sqrt(a ** 2 + b ** 2 + c ** 2);
     } else {
         throw new Error('Numbers should be entered');
     }
 }
 
-getParallelipidedDiagonal(1,2,3)
+getParallelipidedDiagonal(1, 2, 3)
 
 /**
- * Returns the number rounded to specified power of 10.
+ * 10) Returns the number rounded to specified power of 10.
  *
  * @param {number} num
  * @param {number} pow
@@ -235,8 +235,14 @@ getParallelipidedDiagonal(1,2,3)
  *   1678, 3  => 2000
  */
 function roundToPowerOfTen(num, pow) {
-    throw new Error('Not implemented');
+    if (typeof num === 'number' && typeof pow === 'number') {
+        return Math.round(num / 10 ** pow) * 10 ** pow;
+    } else {
+        throw new Error('Numbers should be entered');
+    }
 }
+
+roundToPowerOfTen(1678, 3);
 
 /**
  * Returns true is the number is prime; otherwise false.
