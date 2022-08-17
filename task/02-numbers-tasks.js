@@ -23,16 +23,16 @@
  */
 function getRectangleArea(width, height) {
     if (typeof width === 'number' && typeof height === 'number') {
-        return width*height;
+        return width * height;
     } else {
         throw new Error('Number should be entered');
-    }    
+    }
 }
 
 getRectangleArea(12, 12);
 
 /**
- * Returns a circumference of circle given by radius.
+ * 2) Returns a circumference of circle given by radius.
  *
  * @param {number} radius
  * @return {number}
@@ -43,8 +43,14 @@ getRectangleArea(12, 12);
  *   0    => 0
  */
 function getCicleCircumference(radius) {
-    throw new Error('Not implemented');
+    if (typeof radius === 'number') {
+        return 2*Math.PI*radius;
+    } else {
+        throw new Error('Number should be entered');
+    }
 }
+
+getCicleCircumference(5);
 
 /**
  * Returns an average of two given numbers.
@@ -164,7 +170,7 @@ function parseNumberFromString(value) {
  *   3,3,3   => 5.196152422706632
  *   1,2,3   => 3.741657386773941
  */
-function getParallelipidedDiagonal(a,b,c) {
+function getParallelipidedDiagonal(a, b, c) {
     throw new Error('Not implemented');
 }
 
