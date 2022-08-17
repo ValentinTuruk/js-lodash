@@ -245,7 +245,7 @@ function roundToPowerOfTen(num, pow) {
 roundToPowerOfTen(1678, 3);
 
 /**
- * Returns true is the number is prime; otherwise false.
+ * 11) Returns true is the number is prime; otherwise false.
  * See: https://en.wikipedia.org/wiki/Primality_test
  *
  * @param {number} n
@@ -262,8 +262,22 @@ roundToPowerOfTen(1678, 3);
  *   17 => true
  */
 function isPrime(n) {
-    throw new Error('Not implemented');
+    if (typeof n === 'number' && n > 0) {
+        let divideCounter = 0;
+        
+        for (let i = 2; i < n; ++i) {
+            if (n % i === 0) {
+                divideCounter += i;
+            }
+        }
+
+        return (!divideCounter);
+    } else {
+        throw new Error('Wrong input');
+    }
 }
+
+isPrime (113);
 
 /**
  * Tries to convert value to number and returns it if conversion was successfull;
