@@ -66,7 +66,7 @@ getCicleCircumference(5);
  */
 function getAverage(value1, value2) {
     if (typeof value1 === 'number' && typeof value2 === 'number') {
-        return (value1+value2)/2;
+        return (value1 + value2) / 2;
     } else {
         throw new Error('Numbers should be entered');
     }
@@ -91,13 +91,13 @@ getAverage(-3, 5);
  */
 function getDistanceBetweenPoints(x1, y1, x2, y2) {
     if (typeof x1 === 'number' && typeof x2 === 'number' && typeof y1 === 'number' && typeof y2 === 'number') {
-        return Math.sqrt( (x2-x1)**2 + (y2-y1)**2 );
+        return Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
     } else {
         throw new Error('Numbers should be entered');
     }
 }
 
-getDistanceBetweenPoints(-5, 0, 10 ,-10)
+getDistanceBetweenPoints(-5, 0, 10, -10)
 
 /**
  * 5) Returns a root of linear equation a*x + b = 0 given by coefficients a and b.
@@ -113,7 +113,7 @@ getDistanceBetweenPoints(-5, 0, 10 ,-10)
  */
 function getLinearEquationRoot(a, b) {
     if (typeof a === 'number' && typeof b === 'number') {
-        return (0-b)/a;
+        return (0 - b) / a;
     } else {
         throw new Error('Numbers should be entered');
     }
@@ -123,7 +123,7 @@ getLinearEquationRoot(5, 0)
 
 
 /**
- * Returns an angle (in radians) between two vectors given by xi and yi, coordinates in Cartesian plane
+ * 6) Returns an angle (in radians) between two vectors given by xi and yi, coordinates in Cartesian plane
  * See details https://en.wikipedia.org/wiki/Euclidean_vector#Representations
  *
  * @param {number} x1
@@ -140,8 +140,18 @@ getLinearEquationRoot(5, 0)
  *   (0,1) (1,2)     => 0
  */
 function getAngleBetweenVectors(x1, y1, x2, y2) {
-    throw new Error('Not implemented');
+    if (typeof x1 === 'number' && typeof x2 === 'number' && typeof y1 === 'number' && typeof y2 === 'number') {
+        const cos = (x1 * x2 + y1 * y2) / (Math.sqrt(x1 ** 2 + y1 ** 2) * Math.sqrt(x2 ** 2 + y2 ** 2));
+        const angleGrag = Math.acos(cos);
+        console.log (angleGrag);
+        const angleRadians = angleGrag * Math.PI / 180;
+        return angleRadians
+    } else {
+        throw new Error('Numbers should be entered');
+    }
 }
+
+getAngleBetweenVectors(1,3,4,2);
 
 /**
  * Returns a last digit of a integer number.
