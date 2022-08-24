@@ -11,7 +11,7 @@
 
  
 /**
- * Returns an index of the specified element in array or -1 if element is not found
+ * 1) Returns an index of the specified element in array or -1 if element is not found
  * 
  * @param {array} arr
  * @param {any} value
@@ -23,8 +23,10 @@
  *    [0, 1, 2, 3, 4, 5], 5    => 5
  */
 function findElement(arr, value) {
-   throw new Error('Not implemented');
+   return arr.indexOf(value);
 }
+
+findElement(['Array', 'Number', 'string'], 'Date');
 
 /**
  * Generates an array of odd numbers of the specified length
