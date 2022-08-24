@@ -71,7 +71,7 @@ function doubleArray(arr) {
 doubleArray(['Ace', 10, true]);
 
 /**
- * Returns an array of positive numbers from the specified array in original order
+ * 4) Returns an array of positive numbers from the specified array in original order
  * 
  * @param {array} arr
  * @return {array}
@@ -82,8 +82,16 @@ doubleArray(['Ace', 10, true]);
  *    [] => [] 
  */
 function getArrayOfPositives(arr) {
-   throw new Error('Not implemented');
+   const positivArray = [];
+   arr.forEach((item) => {
+      if (item > 0) {
+         positivArray.push(item);
+      }
+   });
+   return positivArray;
 }
+
+getArrayOfPositives([-1, 2, -5, -4, 0]);
 
 /**
  * Returns the array with strings only in the specified array (in original order)
