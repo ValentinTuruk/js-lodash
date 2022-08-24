@@ -256,7 +256,7 @@ toCsvText([
 ]);
 
 /**
- * Transforms the numeric array into the according array of squares:
+ * 13) Transforms the numeric array into the according array of squares:
  *   f(x) = x * x
  * 
  * @param {array} arr
@@ -267,9 +267,10 @@ toCsvText([
  *   [ 10, 100, -1 ]      => [ 100, 10000, 1 ]
  */
 function toArrayOfSquares(arr) {
-   throw new Error('Not implemented');
+   return arr.map(item=> item**2);
 }
 
+toArrayOfSquares([0, 1, 2, 3, 4, 5, 10, 100, -1 ]);
 
 /**
  * Transforms the numeric array to the according moving sum array:
