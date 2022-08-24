@@ -54,7 +54,7 @@ generateOdds(5);
 
 
 /**
- * Returns the doubled array - elements of the specified array are repeated twice using original order
+ * 3) Returns the doubled array - elements of the specified array are repeated twice using original order
  * 
  * @param {array} arr
  * @return {array}
@@ -65,9 +65,10 @@ generateOdds(5);
  *    [] => [] 
  */
 function doubleArray(arr) {
-   throw new Error('Not implemented');
+   return arr.concat(arr);
 }
 
+doubleArray(['Ace', 10, true]);
 
 /**
  * Returns an array of positive numbers from the specified array in original order
