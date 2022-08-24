@@ -172,10 +172,10 @@ function getStringsLength(arr) {
    return arr.map(item => item.length);
 }
 
-getStringsLength([ '', 'a', 'bc', 'def', 'ghij', 'react', 'ember' ])
+getStringsLength(['', 'a', 'bc', 'def', 'ghij', 'react', 'ember'])
 
 /**
- * Inserts the item into specified array at specified index
+ * 9) Inserts the item into specified array at specified index
  * 
  * @param {array} arr
  * @param {any} item
@@ -186,8 +186,14 @@ getStringsLength([ '', 'a', 'bc', 'def', 'ghij', 'react', 'ember' ])
  *    [ 1, 'b', 'c'], 0, 'x'  => [ 'x', 1, 'b', 'c' ]
  */
 function insertItem(arr, item, index) {
-   throw new Error('Not implemented');
+   let arrayPartOne = arr.slice(0, index);
+   arrayPartOne.push(item);
+   const arrayPartTwo = arr.slice(index);
+   const wholeArray = arrayPartOne.concat(arrayPartTwo);
+   return wholeArray;
 }
+
+insertItem([ 1, 'b', 'c'], 'x', 0)
 
 /**
  * Returns the n first items of the specified array
