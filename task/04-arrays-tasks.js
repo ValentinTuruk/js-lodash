@@ -159,7 +159,7 @@ function getUpperCaseStrings(arr) {
 getUpperCaseStrings(['permanent-internship', 'glutinous-shriek', 'multiplicative-elevation', 'B', 'C', 'D', 'E', 'F', 'G'])
 
 /**
- * Returns the array of string lengths from the specified string array.
+ * 8) Returns the array of string lengths from the specified string array.
  * 
  * @param {array} arr
  * @return {array}
@@ -169,8 +169,10 @@ getUpperCaseStrings(['permanent-internship', 'glutinous-shriek', 'multiplicative
  *    [ 'angular', 'react', 'ember' ] => [ 7, 5, 5 ]
  */
 function getStringsLength(arr) {
-   throw new Error('Not implemented');
+   return arr.map(item => item.length);
 }
+
+getStringsLength([ '', 'a', 'bc', 'def', 'ghij', 'react', 'ember' ])
 
 /**
  * Inserts the item into specified array at specified index
