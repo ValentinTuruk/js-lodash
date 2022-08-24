@@ -107,17 +107,17 @@ getArrayOfPositives([-1, 2, -5, -4, 0]);
 function getArrayOfStrings(arr) {
    const arrayOfStrings = [];
    arr.forEach((item) => {
-      if (typeof(item) === 'string') {
+      if (typeof (item) === 'string') {
          arrayOfStrings.push(item);
       }
    });
    return arrayOfStrings;
 }
 
-getArrayOfStrings([ 0, 1, 'cat', 3, true, 'dog' ]);
+getArrayOfStrings([0, 1, 'cat', 3, true, 'dog']);
 
 /**
- * Removes falsy values from the specified array
+ * 6) Removes falsy values from the specified array
  * Falsy values: false, null, 0, "", undefined, and NaN.
  * (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean#Description)
  * 
@@ -130,11 +130,19 @@ getArrayOfStrings([ 0, 1, 'cat', 3, true, 'dog' ]);
  *    [ false, 0, NaN, '', undefined ]   => [ ]
  */
 function removeFalsyValues(arr) {
-   throw new Error('Not implemented');
+   const arrayOfTrulyValues = [];
+   arr.forEach((item) => {
+      if (item) {
+         arrayOfTrulyValues.push(item);
+      }
+   });
+   return arrayOfTrulyValues;
 }
 
+removeFalsyValues([false, 0, NaN, '', undefined, 'cat', NaN, true, ''])
+
 /**
- * Returns the array of useprcase strings from the specified array
+ * 7) Returns the array of useprcase strings from the specified array
  * 
  * @param {array} arr
  * @return {array}
