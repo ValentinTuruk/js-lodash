@@ -209,7 +209,7 @@ function getHead(arr, n) {
 getHead([ 'a', 'b', 'c', 'd'], 3);
 
 /**
- * Returns the n last items of the specified array
+ * 11) Returns the n last items of the specified array
  * 
  * @param {array} arr
  * @param {number} n 
@@ -219,9 +219,10 @@ getHead([ 'a', 'b', 'c', 'd'], 3);
  *    [ 'a', 'b', 'c', 'd'], 3  => [ 'b', 'c', 'd' ]
  */
 function getTail(arr, n) {
-   throw new Error('Not implemented');
+   return arr.slice(-n);
 }
 
+getTail([ 'a', 'b', 'c', 'd'], 3);
 
 /**
  * Returns CSV represebtation of two-dimentional numeric array.
