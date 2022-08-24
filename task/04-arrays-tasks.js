@@ -94,7 +94,7 @@ function getArrayOfPositives(arr) {
 getArrayOfPositives([-1, 2, -5, -4, 0]);
 
 /**
- * Returns the array with strings only in the specified array (in original order)
+ * 5) Returns the array with strings only in the specified array (in original order)
  * 
  * @param {array} arr
  * @return {array}
@@ -105,8 +105,16 @@ getArrayOfPositives([-1, 2, -5, -4, 0]);
  *    [ 'cat, 'dog', 'raccon' ] => [ 'cat', 'dog', 'racoon' ]
  */
 function getArrayOfStrings(arr) {
-   throw new Error('Not implemented');
+   const arrayOfStrings = [];
+   arr.forEach((item) => {
+      if (typeof(item) === 'string') {
+         arrayOfStrings.push(item);
+      }
+   });
+   return arrayOfStrings;
 }
+
+getArrayOfStrings([ 0, 1, 'cat', 3, true, 'dog' ]);
 
 /**
  * Removes falsy values from the specified array
