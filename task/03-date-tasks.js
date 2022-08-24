@@ -90,7 +90,7 @@ const startDate = new Date(2000, 1, 1, 10, 0, 0);
 const endDate = new Date(2000, 1, 1, 15, 20, 10, 453);
 
 function timeSpanToString(startDate, endDate) {
-   const timespan = new Date(endDate - startDate + new Date().getTimezoneOffset()*60*1000)
+   const timespan = new Date(endDate - startDate + new Date().getTimezoneOffset() * 60 * 1000)
 
    console.log(timespan);
    const hh = timespan.getHours();
@@ -112,7 +112,7 @@ function timeSpanToString(startDate, endDate) {
 timeSpanToString(startDate, endDate);
 
 /**
- * Returns the angle (in radians) between the hands of an analog clock for the specified Greenwich time.
+ * 5) Returns the angle (in radians) between the hands of an analog clock for the specified Greenwich time.
  * If you have problem with solution please read: https://en.wikipedia.org/wiki/Clock_angle_problem
  * 
  * @param {date} date
@@ -124,9 +124,26 @@ timeSpanToString(startDate, endDate);
  *    Date.UTC(2016,3,5,18, 0) => Math.PI
  *    Date.UTC(2016,3,5,21, 0) => Math.PI/2
  */
+
+const dateOclock = new Date(Date.UTC(2016, 3, 5, 21, 0))
+
 function angleBetweenClockHands(date) {
-   throw new Error('Not implemented');
+   const hours = date.getUTCHours();
+   const minutes = date.getUTCMinutes();
+   let angleGrad;
+
+   if (hours <= 12) {
+      angleGrad = (hours + (minutes / 60)) * 30 - minutes * 6;
+   } else {
+      angleGrad = ((hours - 12) + (minutes / 60)) * 30 - minutes * 6;
+   }
+   console.log(angleGrad);
+   const angleRadian = angleGrad * Math.PI / 180;
+
+   return angleRadian;
 }
+
+angleBetweenClockHands(dateOclock)
 
 
 module.exports = {
