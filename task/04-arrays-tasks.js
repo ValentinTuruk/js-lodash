@@ -152,9 +152,11 @@ removeFalsyValues([false, 0, NaN, '', undefined, 'cat', NaN, true, ''])
  *    [ 'a', 'b', 'c', 'd', 'e', 'f', 'g' ]  => [ 'A', 'B', 'C', 'D', 'E', 'F', 'G' ]
  */
 function getUpperCaseStrings(arr) {
-   throw new Error('Not implemented');
+   const arrayInUppeacase = arr.map(item => item.toUpperCase());
+   return arrayInUppeacase;
 }
 
+getUpperCaseStrings(['permanent-internship', 'glutinous-shriek', 'multiplicative-elevation', 'B', 'C', 'D', 'E', 'F', 'G'])
 
 /**
  * Returns the array of string lengths from the specified string array.
