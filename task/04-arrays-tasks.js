@@ -267,13 +267,13 @@ toCsvText([
  *   [ 10, 100, -1 ]      => [ 100, 10000, 1 ]
  */
 function toArrayOfSquares(arr) {
-   return arr.map(item=> item**2);
+   return arr.map(item => item ** 2);
 }
 
-toArrayOfSquares([0, 1, 2, 3, 4, 5, 10, 100, -1 ]);
+toArrayOfSquares([0, 1, 2, 3, 4, 5, 10, 100, -1]);
 
 /**
- * Transforms the numeric array to the according moving sum array:
+ * 14) Transforms the numeric array to the according moving sum array:
  *     f[n] = x[0] + x[1] + x[2] +...+ x[n] 
  *  or f[n] = f[n-1] + x[n]
  * 
@@ -287,11 +287,19 @@ toArrayOfSquares([0, 1, 2, 3, 4, 5, 10, 100, -1 ]);
  *   [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ] => [ 1, 3, 6, 10, 15, 21, 28, 36, 45, 55 ]
  */
 function getMovingSum(arr) {
-   throw new Error('Not implemented');
+   let arrayOfSums = [];
+   let sum = 0;
+   arr.forEach((item) => {
+      sum += item
+      arrayOfSums.push(sum);
+   }, 0);
+   return (arrayOfSums);
 }
 
+getMovingSum([10, -10, 10, -10, 10]);
+
 /**
- * Returns every second item from the specified array:
+ * 15) Returns every second item from the specified array:
  * 
  * @param {array} arr
  * @return {array}
