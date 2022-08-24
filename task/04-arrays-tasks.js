@@ -186,17 +186,14 @@ getStringsLength(['', 'a', 'bc', 'def', 'ghij', 'react', 'ember'])
  *    [ 1, 'b', 'c'], 0, 'x'  => [ 'x', 1, 'b', 'c' ]
  */
 function insertItem(arr, item, index) {
-   let arrayPartOne = arr.slice(0, index);
-   arrayPartOne.push(item);
-   const arrayPartTwo = arr.slice(index);
-   const wholeArray = arrayPartOne.concat(arrayPartTwo);
-   return wholeArray;
+   arr.splice(index, 0, item);
+   return arr;
 }
 
-insertItem([ 1, 'b', 'c'], 'x', 0)
+insertItem([1, 'b', 'c'], 'x', 0);
 
 /**
- * Returns the n first items of the specified array
+ * 10) Returns the n first items of the specified array
  * 
  * @param {array} arr
  * @param {number} n 
@@ -206,9 +203,10 @@ insertItem([ 1, 'b', 'c'], 'x', 0)
  *    [ 'a', 'b', 'c', 'd'], 3  => [ 'a', 'b', 'c' ]
  */
 function getHead(arr, n) {
-   throw new Error('Not implemented');
+   return arr.slice(0, n)
 }
 
+getHead([ 'a', 'b', 'c', 'd'], 3);
 
 /**
  * Returns the n last items of the specified array
