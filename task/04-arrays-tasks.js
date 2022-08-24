@@ -206,7 +206,7 @@ function getHead(arr, n) {
    return arr.slice(0, n)
 }
 
-getHead([ 'a', 'b', 'c', 'd'], 3);
+getHead(['a', 'b', 'c', 'd'], 3);
 
 /**
  * 11) Returns the n last items of the specified array
@@ -222,10 +222,10 @@ function getTail(arr, n) {
    return arr.slice(-n);
 }
 
-getTail([ 'a', 'b', 'c', 'd'], 3);
+getTail(['a', 'b', 'c', 'd'], 3);
 
 /**
- * Returns CSV represebtation of two-dimentional numeric array.
+ * 12) Returns CSV represebtation of two-dimentional numeric array.
  * https://en.wikipedia.org/wiki/Comma-separated_values
  * 
  * @param {array} arr
@@ -245,8 +245,15 @@ getTail([ 'a', 'b', 'c', 'd'], 3);
  *    +'30,31,32,33,34'
  */
 function toCsvText(arr) {
-   throw new Error('Not implemented');
+   return arr.join('')
 }
+
+toCsvText([
+   [0, 1, 2, 3, 4],
+   [10, 11, 12, 13, 14],
+   [20, 21, 22, 23, 24],
+   [30, 31, 32, 33, 34]
+]);
 
 /**
  * Transforms the numeric array into the according array of squares:
