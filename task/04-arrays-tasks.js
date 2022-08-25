@@ -422,13 +422,13 @@ sortDigitNamesByNumericOrder(['one', 'one', 'one', 'zero', 'one', 'two', 'three'
  *   [ 1, 10, 100, 1000 ]  => 1111
  */
 function getItemsSum(arr) {
-   return arr.reduce( (sum, item) => sum + item, 0);
+   return arr.reduce((sum, item) => sum + item, 0);
 }
 
 getItemsSum([1, 10, 100, 1000]);
 
 /** 
- * Returns the number of all falsy value in the specified array
+ * 21) Returns the number of all falsy value in the specified array
  * 
  * @param {array} arr
  * @return {array}
@@ -440,8 +440,16 @@ getItemsSum([1, 10, 100, 1000]);
  *  [ null, undefined, NaN, false, 0, '' ]  => 6
  */
 function getFalsyValuesCount(arr) {
-   throw new Error('Not implemented');
+   const falsyValues = [];
+   arr.forEach(item => {
+      if (!item) {
+         falsyValues.push(item);
+      }
+   });
+   return falsyValues.length;
 }
+
+getFalsyValuesCount([-1, 'false', null, 0, 1, '', 3, null, undefined, NaN, false, 0, '']);
 
 /**
  * Returns a number of all occurences of the specified item in an array  
