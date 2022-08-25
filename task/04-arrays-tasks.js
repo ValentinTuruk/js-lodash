@@ -452,7 +452,7 @@ function getFalsyValuesCount(arr) {
 getFalsyValuesCount([-1, 'false', null, 0, 1, '', 3, null, undefined, NaN, false, 0, '']);
 
 /**
- * Returns a number of all occurences of the specified item in an array  
+ * 22) Returns a number of all occurences of the specified item in an array  
  * 
  * @param {array} arr
  * @param {any} item 
@@ -466,8 +466,10 @@ getFalsyValuesCount([-1, 'false', null, 0, 1, '', 3, null, undefined, NaN, false
  *    [ true, 0, 1, 'true' ], true => 1
  */
 function findAllOccurences(arr, item) {
-   throw new Error('Not implemented');
+   return arr.filter(value => value === item).length;
 }
+
+findAllOccurences([ true, 0, 1, 'true' ], true);
 
 /**
  * Concatenates all elements from specified array into single string with ',' delimeter  
