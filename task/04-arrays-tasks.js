@@ -410,7 +410,7 @@ function sortDigitNamesByNumericOrder(arr) {
 sortDigitNamesByNumericOrder(['one', 'one', 'one', 'zero', 'one', 'two', 'three', 'nine', 'eight', 'nine', 'eight']);
 
 /** 
- * Returns the sum of all items in the specified array of numbers
+ * 20) Returns the sum of all items in the specified array of numbers
  * 
  * @param {array} arr
  * @return {number}
@@ -422,8 +422,10 @@ sortDigitNamesByNumericOrder(['one', 'one', 'one', 'zero', 'one', 'two', 'three'
  *   [ 1, 10, 100, 1000 ]  => 1111
  */
 function getItemsSum(arr) {
-   throw new Error('Not implemented');
+   return arr.reduce( (sum, item) => sum + item, 0);
 }
+
+getItemsSum([1, 10, 100, 1000]);
 
 /** 
  * Returns the number of all falsy value in the specified array
