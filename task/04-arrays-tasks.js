@@ -469,10 +469,10 @@ function findAllOccurences(arr, item) {
    return arr.filter(value => value === item).length;
 }
 
-findAllOccurences([ true, 0, 1, 'true' ], true);
+findAllOccurences([true, 0, 1, 'true'], true);
 
 /**
- * Concatenates all elements from specified array into single string with ',' delimeter  
+ * 23) Concatenates all elements from specified array into single string with ',' delimeter  
  * 
  * @param {array} arr 
  * @return {string}
@@ -483,9 +483,10 @@ findAllOccurences([ true, 0, 1, 'true' ], true);
  *    ['rock', 'paper', 'scissors']     => 'rock,paper,scissors'
  */
 function toStringList(arr) {
-   throw new Error('Not implemented');
+   return arr.join(',');
 }
 
+toStringList([0, false, 'cat', NaN, true, '']);
 
 /**
  * Sorts the specified array by country name first and city name (if countries are equal) in ascending order.
