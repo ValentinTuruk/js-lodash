@@ -350,7 +350,7 @@ propagateItemsByPositionIndex(['a', 'b', 'c', null]);
 
 
 /** 
- * Returns the 3 largest numbers from the specified array
+ * 17) Returns the 3 largest numbers from the specified array
  * 
  * @param {array} arr
  * @return {array}
@@ -363,9 +363,11 @@ propagateItemsByPositionIndex(['a', 'b', 'c', null]);
  *   [ 10, 10, 10, 10 ] => [ 10, 10, 10 ]
  */
 function get3TopItems(arr) {
-   throw new Error('Not implemented');
+   const topThreeAaaray = arr.sort((a, b) => b - a).slice(0, 3);
+   return topThreeAaaray
 }
 
+get3TopItems([1, 2, 3, 4, 10, 5, 6, 7, 8, 9, 10]);
 
 /**  
  * Returns the number of positive numbers from specified array
