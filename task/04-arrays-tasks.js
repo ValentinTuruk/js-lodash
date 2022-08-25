@@ -319,10 +319,10 @@ function getSecondItems(arr) {
    return everySecond;
 }
 
-getSecondItems([ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 'a', 'b', 'c' , null ])
+getSecondItems([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 'a', 'b', 'c', null])
 
 /**
- * Propagates every item in sequence its position times
+ * 16 )Propagates every item in sequence its position times
  * Returns an array that consists of: one first item, two second items, tree third items etc. 
  * 
  * @param {array} arr 
@@ -336,8 +336,17 @@ getSecondItems([ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 'a', 'b', 'c' , null ])
  *  [ 1,2,3,4,5 ] => [ 1, 2,2, 3,3,3, 4,4,4,4, 5,5,5,5,5 ]
  */
 function propagateItemsByPositionIndex(arr) {
-   throw new Error('Not implemented');
+   let arrayOfArrays = []
+   arr.forEach((item, index, array) => {
+      const middleArray = new Array(index + 1);
+      middleArray.fill(item);
+      arrayOfArrays.push(middleArray);
+   });
+   const multipleArray = [].concat.apply([], arrayOfArrays);
+   return multipleArray;
 }
+
+propagateItemsByPositionIndex(['a', 'b', 'c', null]);
 
 
 /** 
