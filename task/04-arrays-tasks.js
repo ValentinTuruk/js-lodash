@@ -310,9 +310,16 @@ getMovingSum([10, -10, 10, -10, 10]);
  * [ "a" ] => []
  */
 function getSecondItems(arr) {
-   throw new Error('Not implemented');
+   const everySecond = [];
+   arr.forEach((item, index) => {
+      if (index % 2 === 1) {
+         everySecond.push(item);
+      }
+   });
+   return everySecond;
 }
 
+getSecondItems([ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 'a', 'b', 'c' , null ])
 
 /**
  * Propagates every item in sequence its position times
