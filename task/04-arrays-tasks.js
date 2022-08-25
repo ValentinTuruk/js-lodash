@@ -389,7 +389,7 @@ function getPositivesCount(arr) {
 getPositivesCount([-1, 0, 1, null, 1, 'elephant', '2']);
 
 /** 
- * Sorts digit names
+ * 19) Sorts digit names
  * 
  * @param {array} arr
  * @return {array}
@@ -402,8 +402,12 @@ getPositivesCount([-1, 0, 1, null, 1, 'elephant', '2']);
  *   [ 'one','one','one','zero' ]     => [ 'zero','one','one','one' ]
  */
 function sortDigitNamesByNumericOrder(arr) {
-   throw new Error('Not implemented');
+   const digitList = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+   arr.sort((a, b) => digitList.indexOf(a) - digitList.indexOf(b));
+   return arr;
 }
+
+sortDigitNamesByNumericOrder(['one', 'one', 'one', 'zero', 'one', 'two', 'three', 'nine', 'eight', 'nine', 'eight']);
 
 /** 
  * Returns the sum of all items in the specified array of numbers
