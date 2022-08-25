@@ -489,7 +489,7 @@ function toStringList(arr) {
 toStringList([0, false, 'cat', NaN, true, '']);
 
 /**
- * Sorts the specified array by country name first and city name (if countries are equal) in ascending order.
+ * 24) Sorts the specified array by country name first and city name (if countries are equal) in ascending order.
  * 
  * @param {array} arr
  * @return {array}
@@ -513,8 +513,29 @@ toStringList([0, false, 'cat', NaN, true, '']);
  *      { country: 'Russia',  city: 'Saint Petersburg' }
  */
 function sortCitiesArray(arr) {
-   throw new Error('Not implemented');
+   return arr.sort((a, b) => {
+      if (a.country > b.country) {
+         return 1;
+      } else if (a.country < b.country) {
+         return - 1;
+      } else if (a.city > b.city) {
+         return 1;
+      } else if (a.city < b.city) {
+         return - 1;
+      } else {
+         return 0;
+      }
+   });
 }
+
+sortCitiesArray([
+   { country: 'Russia', city: 'Moscow' },
+   { country: 'Belarus', city: 'Minsk' },
+   { country: 'Poland', city: 'Warsaw' },
+   { country: 'Russia', city: 'Saint Petersburg' },
+   { country: 'Poland', city: 'Krakow' },
+   { country: 'Belarus', city: 'Brest' }
+]);
 
 /**
  * Creates an indentity matrix of the specified size
