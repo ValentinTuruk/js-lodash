@@ -564,7 +564,7 @@ function getIdentityMatrix(n) {
       const childArray = new Array(n);
       childArray.fill(0);
       childArray[index] = 1;
-      arrayOfArrays[index] =childArray;
+      arrayOfArrays[index] = childArray;
    })
 
    return arrayOfArrays;
@@ -573,7 +573,7 @@ function getIdentityMatrix(n) {
 getIdentityMatrix(5);
 
 /**
- * Creates an array of integers from the specified start to end (inclusive)
+ * 26) Creates an array of integers from the specified start to end (inclusive)
  * 
  * @param {number} start
  * @param {number} end
@@ -586,8 +586,16 @@ getIdentityMatrix(5);
  *     3, 3   => [ 3 ]
  */
 function getIntervalArray(start, end) {
-   throw new Error('Not implemented');
+   const arr = new Array(end - start + 1);
+   arr.fill(0);
+   const intervalArray = arr.map((item, index) => {
+      console.log(start + index);
+      return start + index;
+   })
+   return intervalArray
 }
+
+getIntervalArray(-2, 27);
 
 /**
  * Returns array containing only unique values from the specified array.
