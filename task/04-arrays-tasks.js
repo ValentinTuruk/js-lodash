@@ -538,7 +538,7 @@ sortCitiesArray([
 ]);
 
 /**
- * Creates an indentity matrix of the specified size
+ * 25) Creates an indentity matrix of the specified size
  * 
  * @param {number} n
  * @return {array}
@@ -556,8 +556,21 @@ sortCitiesArray([
  *           [0,0,0,0,1]]   
  */
 function getIdentityMatrix(n) {
-   throw new Error('Not implemented');
+   const array = new Array(n);
+   array.fill(0);
+   const arrayOfArrays = new Array(n);
+
+   array.forEach((item, index) => {
+      const childArray = new Array(n);
+      childArray.fill(0);
+      childArray[index] = 1;
+      arrayOfArrays[index] =childArray;
+   })
+
+   return arrayOfArrays;
 }
+
+getIdentityMatrix(5);
 
 /**
  * Creates an array of integers from the specified start to end (inclusive)
