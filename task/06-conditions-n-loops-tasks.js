@@ -45,7 +45,7 @@ getFizzBuzz(20);
 
 
 /**
- * Returns the factorial of the specified integer n.
+ * 2) Returns the factorial of the specified integer n.
  *
  * @param {number} n
  * @return {number}
@@ -56,9 +56,20 @@ getFizzBuzz(20);
  *   10 => 3628800
  */
 function getFactorial(n) {
-    throw new Error('Not implemented');
+    
+    if (n > 0) {
+        let sum = 1;
+        for (let i = 1; i <= n; ++i) {
+            sum *= i
+        }
+        return sum;
+
+    } else if (n = 0) {
+        return 1
+    }
 }
 
+getFactorial(10);
 
 /**
  * Returns the sum of integer numbers between n1 and n2 (inclusive).
