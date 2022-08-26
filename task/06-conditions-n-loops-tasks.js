@@ -56,7 +56,6 @@ getFizzBuzz(20);
  *   10 => 3628800
  */
 function getFactorial(n) {
-    
     if (n > 0) {
         let sum = 1;
         for (let i = 1; i <= n; ++i) {
@@ -72,7 +71,7 @@ function getFactorial(n) {
 getFactorial(10);
 
 /**
- * Returns the sum of integer numbers between n1 and n2 (inclusive).
+ * 3) Returns the sum of integer numbers between n1 and n2 (inclusive).
  *
  * @param {number} n1
  * @param {number} n2
@@ -84,9 +83,14 @@ getFactorial(10);
  *   -1,1  =>  0  ( = -1 + 0 + 1 )
  */
 function getSumBetweenNumbers(n1, n2) {
-    throw new Error('Not implemented');
+    let sum = 0;
+    for (let i = n1; i <= n2; ++i) {
+        sum += i;        
+    }
+    return sum;
 }
 
+getSumBetweenNumbers(-5,10);
 
 /**
  * Returns true, if a triangle can be built with the specified sides a,b,c and false in any other ways.
