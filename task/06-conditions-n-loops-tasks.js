@@ -93,7 +93,7 @@ function getSumBetweenNumbers(n1, n2) {
 getSumBetweenNumbers(-5,10);
 
 /**
- * Returns true, if a triangle can be built with the specified sides a,b,c and false in any other ways.
+ * 4) Returns true, if a triangle can be built with the specified sides a,b,c and false in any other ways.
  *
  * @param {number} a
  * @param {number} b
@@ -107,8 +107,14 @@ getSumBetweenNumbers(-5,10);
  *   10,10,10 =>  true
  */
 function isTriangle(a, b, c) {
-    throw new Error('Not implemented');
+    if (a+b <= c || c+b <= a || a+c <= b) {
+        return false;
+    } else {
+        return true;
+    }
 }
+
+isTriangle(1,2,3)
 
 
 /**
