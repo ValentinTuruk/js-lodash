@@ -597,7 +597,7 @@ function getIntervalArray(start, end) {
 getIntervalArray(-2, 27);
 
 /**
- * Returns array containing only unique values from the specified array.
+ * 27) Returns array containing only unique values from the specified array.
  *
  * @param {array} arr
  * @return {array}
@@ -608,8 +608,13 @@ getIntervalArray(-2, 27);
  *   [ 1, 1, 2, 2, 3, 3, 4, 4] => [ 1, 2, 3, 4]
  */
 function distinct(arr) {
-   throw new Error('Not implemented');
+   const set = new Set(arr);
+   console.log(set);
+   const arrayOfUnique =  Array.from(set);
+   return arrayOfUnique;
 }
+
+distinct([ 1, 1, 2, 2, 3, 3, 4, 4]);
 
 /**
  * Groups elements of the specified array by key.
