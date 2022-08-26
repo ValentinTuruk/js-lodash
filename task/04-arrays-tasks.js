@@ -610,14 +610,14 @@ getIntervalArray(-2, 27);
 function distinct(arr) {
    const set = new Set(arr);
    console.log(set);
-   const arrayOfUnique =  Array.from(set);
+   const arrayOfUnique = Array.from(set);
    return arrayOfUnique;
 }
 
-distinct([ 1, 1, 2, 2, 3, 3, 4, 4]);
+distinct([1, 1, 2, 2, 3, 3, 4, 4]);
 
 /**
- * Groups elements of the specified array by key.
+ * 28) Groups elements of the specified array by key.
  * Returns multimap of keys extracted from array elements via keySelector callback
  * and values extracted via valueSelector callback.
  * See: https://en.wikipedia.org/wiki/Multimap
@@ -647,8 +647,35 @@ distinct([ 1, 1, 2, 2, 3, 3, 4, 4]);
  *   }
  */
 function group(array, keySelector, valueSelector) {
-   throw new Error('Not implemented');
+   const map = new Map();
+
+   array.forEach((item, index, array) => {
+      const country = keySelector(item);
+      const city = valueSelector(item);
+      if (!map.has(country)) {
+         map.set(country, city)
+      } else {
+         let arrayAddCity = [];
+         arrayAddCity.push(map.get(country));
+         arrayAddCity.push(city);
+         const flatArrayCities = arrayAddCity.flat(1);
+         map.set(country, flatArrayCities);
+      }
+   })
+   console.log(map);
 }
+
+group([
+   { country: 'Belarus', city: 'Brest' },
+   { country: 'Russia', city: 'Omsk' },
+   { country: 'Russia', city: 'Samara' },
+   { country: 'Belarus', city: 'Grodno' },
+   { country: 'Belarus', city: 'Minsk' },
+   { country: 'Poland', city: 'Lodz' }
+],
+   item => item.country,
+   item => item.city
+);
 
 
 /**
