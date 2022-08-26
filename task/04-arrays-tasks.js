@@ -589,7 +589,6 @@ function getIntervalArray(start, end) {
    const arr = new Array(end - start + 1);
    arr.fill(0);
    const intervalArray = arr.map((item, index) => {
-      console.log(start + index);
       return start + index;
    })
    return intervalArray
