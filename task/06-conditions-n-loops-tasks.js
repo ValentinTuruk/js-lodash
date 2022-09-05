@@ -85,12 +85,12 @@ getFactorial(10);
 function getSumBetweenNumbers(n1, n2) {
     let sum = 0;
     for (let i = n1; i <= n2; ++i) {
-        sum += i;        
+        sum += i;
     }
     return sum;
 }
 
-getSumBetweenNumbers(-5,10);
+getSumBetweenNumbers(-5, 10);
 
 /**
  * 4) Returns true, if a triangle can be built with the specified sides a,b,c and false in any other ways.
@@ -107,18 +107,18 @@ getSumBetweenNumbers(-5,10);
  *   10,10,10 =>  true
  */
 function isTriangle(a, b, c) {
-    if (a+b <= c || c+b <= a || a+c <= b) {
+    if (a + b <= c || c + b <= a || a + c <= b) {
         return false;
     } else {
         return true;
     }
 }
 
-isTriangle(1,2,3)
+isTriangle(1, 2, 3)
 
 
 /**
- * Returns true, if two specified axis-aligned rectangles overlap, otherwise false.
+ * 5) Returns true, if two specified axis-aligned rectangles overlap, otherwise false.
  * Each rectangle representing by object 
  *  {
  *     top: 5,
@@ -155,7 +155,7 @@ function doRectanglesOverlap(rect1, rect2) {
 
 
 /**
- * Returns true, if point lies inside the circle, otherwise false.
+ * 6) Returns true, if point lies inside the circle, otherwise false.
  * Circle is an object of 
  *  {
  *     center: {
@@ -186,7 +186,7 @@ function isInsideCircle(circle, point) {
 
 
 /**
- * Returns the first non repeated char in the specified strings otherwise returns null.
+ * 7) Returns the first non repeated char in the specified strings otherwise returns null.
  *
  * @param {string} str
  * @return {string}
@@ -197,9 +197,21 @@ function isInsideCircle(circle, point) {
  *   'entente' => null
  */
 function findFirstSingleChar(str) {
-    throw new Error('Not implemented');
+    let nonReapeated = [];
+    for (let i = 0; i < str.length - 1; ++i) {
+        if (str.split(str[i]).length - 1 == 1) {
+            nonReapeated.push(str[i]);
+        }
+    }
+    if (nonReapeated.length > 0) {
+        return nonReapeated[0];
+    } else {
+        return null;
+    }
+
 }
 
+findFirstSingleChar('entente');
 
 /**
  * Returns the string representation of math interval, specified by two points and include / exclude flags.
