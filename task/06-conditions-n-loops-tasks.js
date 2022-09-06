@@ -214,7 +214,7 @@ function findFirstSingleChar(str) {
 findFirstSingleChar('entente');
 
 /**
- * Returns the string representation of math interval, specified by two points and include / exclude flags.
+ * 8) Returns the string representation of math interval, specified by two points and include / exclude flags.
  * See the details: https://en.wikipedia.org/wiki/Interval_(mathematics)
  *
  * Please take attention, that the smaller number should be the first in the notation
@@ -235,9 +235,12 @@ findFirstSingleChar('entente');
  *
  */
 function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
-    throw new Error('Not implemented');
+    const firstPoint = isStartIncluded ? '[' : '(';
+    const secondPoint = isEndIncluded ? ']' : ')';
+    return `${firstPoint}${a}, ${b}${secondPoint}`;
 }
 
+getIntervalString(0, 1, true, true);
 
 /**
  * Reverse the specified string (put all chars in reverse order)
