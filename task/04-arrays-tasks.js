@@ -698,7 +698,7 @@ function selectMany(arr, childrenSelector) {
 selectMany(['one', 'two', 'three'], x => x.split(''));
 
 /**
- * Returns an element from the multidimentional array by the specified indexes.
+ * 30) Returns an element from the multidimentional array by the specified indexes.
  *
  * @param {array} arr
  * @param {array} indexes
@@ -710,9 +710,14 @@ selectMany(['one', 'two', 'three'], x => x.split(''));
  *   [[[ 1, 2, 3]]], [ 0, 0, 1 ]      => 2        (arr[0][0][1])
  */
 function getElementByIndexes(arr, indexes) {
-   throw new Error('Not implemented');
+   let currentArrayLevel = arr;
+   for (let i of indexes) {
+      currentArrayLevel = currentArrayLevel[i];
+   }
+   return currentArrayLevel;
 }
 
+getElementByIndexes([[[ 1, 2, 3]]], [ 0, 0, 1 ])
 
 /**
  * Swaps the head and tail of the specified array:
