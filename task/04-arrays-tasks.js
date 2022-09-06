@@ -679,7 +679,7 @@ group([
 
 
 /**
- * Projects each element of the specified array to a sequence and flattens the resulting sequences into one array.
+ * 29) Projects each element of the specified array to a sequence and flattens the resulting sequences into one array.
  *
  * @param {array} arr
  * @param {Function} childrenSelector, a transform function to apply to each element that returns an array of children
@@ -690,9 +690,12 @@ group([
  *   ['one','two','three'], x=>x.split('')  =>   ['o','n','e','t','w','o','t','h','r','e','e']
  */
 function selectMany(arr, childrenSelector) {
-   throw new Error('Not implemented');
+   const newArray = arr.map(childrenSelector);
+   const flatArray = [].concat.apply([], newArray);
+   return flatArray;
 }
 
+selectMany(['one', 'two', 'three'], x => x.split(''));
 
 /**
  * Returns an element from the multidimentional array by the specified indexes.
