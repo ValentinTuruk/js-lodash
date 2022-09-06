@@ -243,7 +243,7 @@ function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
 getIntervalString(0, 1, true, true);
 
 /**
- * Reverse the specified string (put all chars in reverse order)
+ * 9) Reverse the specified string (put all chars in reverse order)
  *
  * @param {string} str
  * @return {string}
@@ -255,8 +255,14 @@ getIntervalString(0, 1, true, true);
  * 'noon' => 'noon'
  */
 function reverseString(str) {
-    throw new Error('Not implemented');
+    let reverseString = '';
+    for (let i = str.length - 1; i >= 0; --i) {
+        reverseString += str[i]
+    }
+    return reverseString
 }
+
+reverseString('The quick brown fox jumps over the lazy dog');
 
 
 /**
