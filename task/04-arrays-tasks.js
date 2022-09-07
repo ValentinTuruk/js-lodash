@@ -717,10 +717,10 @@ function getElementByIndexes(arr, indexes) {
    return currentArrayLevel;
 }
 
-getElementByIndexes([[[ 1, 2, 3]]], [ 0, 0, 1 ])
+getElementByIndexes([[[1, 2, 3]]], [0, 0, 1])
 
 /**
- * Swaps the head and tail of the specified array:
+ * 31) Swaps the head and tail of the specified array:
  * the head (first half) of array move to the end, the tail (last half) move to the start. 
  * The middle element (if exists) leave on the same position.
  * 
@@ -738,9 +738,19 @@ getElementByIndexes([[[ 1, 2, 3]]], [ 0, 0, 1 ])
  * 
  */
 function swapHeadAndTail(arr) {
-   throw new Error('Not implemented');
+   let arrTailHead = arr.slice(Math.ceil(arr.length / 2));
+
+   if (!(arr.length % 2 === 0)) {
+      arrTailHead.push(arr[Math.floor(arr.length / 2)])
+   }
+
+   for (let i = 0; i < Math.floor(arr.length / 2); ++i) {
+      arrTailHead.push(arr[i]);
+   }
+   return arrTailHead;
 }
 
+swapHeadAndTail([1, 2, 3, 4, 5, 6, 7, 8, 9]);
 
 module.exports = {
    findElement: findElement,
