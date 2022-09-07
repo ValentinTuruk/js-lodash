@@ -266,7 +266,7 @@ reverseString('The quick brown fox jumps over the lazy dog');
 
 
 /**
- * Reverse the specified integer number (put all digits in reverse order)
+ * 10) Reverse the specified integer number (put all digits in reverse order)
  *
  * @param {number} num
  * @return {number}
@@ -278,9 +278,15 @@ reverseString('The quick brown fox jumps over the lazy dog');
  *   34143 => 34143
  */
 function reverseInteger(num) {
-    throw new Error('Not implemented');
+    const str = num.toString();
+    let reverseString = '';
+    for (let i = str.length - 1; i >= 0; --i) {
+        reverseString += str[i]
+    }
+    return +reverseString
 }
 
+reverseInteger(87354);
 
 /**
  * Validates the CCN (credit card number) and return true if CCN is valid
