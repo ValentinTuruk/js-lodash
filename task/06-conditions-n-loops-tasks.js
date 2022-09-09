@@ -289,7 +289,7 @@ function reverseInteger(num) {
 reverseInteger(87354);
 
 /**
- * Validates the CCN (credit card number) and return true if CCN is valid
+ * 11) Validates the CCN (credit card number) and return true if CCN is valid
  * and false otherwise.
  *
  * See algorithm here : https://en.wikipedia.org/wiki/Luhn_algorithm
@@ -309,9 +309,27 @@ reverseInteger(87354);
  *   4916123456789012 => false
  */
 function isCreditCardNumber(ccn) {
-    throw new Error('Not implemented');
+    const checkDigit = String(ccn).slice(-1);
+    const str = String(ccn).slice(0, -1);
+    const arr = str.split('');
+    let sum = 0;
+    for (let i = 0; i < arr.length; ++i) {
+        if (!(i % 2) || i === 0) {
+            sum += +arr[i];
+        } else {
+            if (2 * + arr[i] > 9) {
+                const strAfterMultiply = String(`${2 * +arr[i]}`);
+                const arrAfterMultiply = strAfterMultiply.split('');
+                sum += arrAfterMultiply.reduce((sum, item) => sum + +item, 0);
+            } else {
+                sum += 2 * +arr[i];
+            }
+        }
+    }
+    return (sum % 10 === 10 - checkDigit);
 }
 
+isCreditCardNumber(79927398713);
 
 /**
  * Returns the digital root of integer:
