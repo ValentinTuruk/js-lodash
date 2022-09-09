@@ -332,7 +332,7 @@ function isCreditCardNumber(ccn) {
 isCreditCardNumber(79927398713);
 
 /**
- * Returns the digital root of integer:
+ * 12) Returns the digital root of integer:
  *   step1 : find sum of all digits
  *   step2 : if sum > 9 then goto step1 otherwise return the sum
  *
@@ -345,10 +345,16 @@ isCreditCardNumber(79927398713);
  *   10000 ( 1+0+0+0+0 = 1 ) => 1
  *   165536 (1+6+5+5+3+6 = 26,  2+6 = 8) => 8
  */
+let sumForTaskEleveen = 0;
+
 function getDigitalRoot(num) {
-    throw new Error('Not implemented');
+    const str = String(num);
+    const arr = str.split('');
+    sumForTaskEleveen = arr.reduce((sum, item) => sum + +item, 0);
+    return sumForTaskEleveen > 9 ? getDigitalRoot(sumForTaskEleveen) : sumForTaskEleveen;
 }
 
+getDigitalRoot(165536);
 
 /**
  * Returns true if the specified string has the balanced brackets and false otherwise.
