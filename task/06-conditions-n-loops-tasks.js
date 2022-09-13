@@ -357,7 +357,7 @@ function getDigitalRoot(num) {
 getDigitalRoot(165536);
 
 /**
- * Returns true if the specified string has the balanced brackets and false otherwise.
+ * 13) Returns true if the specified string has the balanced brackets and false otherwise.
  * Balanced means that is, whether it consists entirely of pairs of opening/closing brackets
  * (in that order), none of which mis-nest.
  * Brackets include [],(),{},<>
@@ -378,9 +378,57 @@ getDigitalRoot(165536);
  *   '{[(<{[]}>)]}' = true 
  */
 function isBracketsBalanced(str) {
-    throw new Error('Not implemented');
+    let arr = str.split('');
+    let result = true;
+    for (let i = 0; i < arr.length;) {
+        switch (arr[i]) {
+            case '[':
+                const closingSquareBracketsIndex = arr.indexOf(']', i);
+                if (closingSquareBracketsIndex !== -1) {
+                    arr.splice(i, 1);
+                    arr.splice(`${closingSquareBracketsIndex - 1}`, 1);
+                } else {
+                    result = false;
+                }
+                break;
+            case '{':
+                const closingCurlyBracketsIndex = arr.indexOf('}', i);
+                if (closingCurlyBracketsIndex !== -1) {
+                    arr.splice(i, 1);
+                    arr.splice(`${closingCurlyBracketsIndex - 1}`, 1);
+                } else {
+                    result = false;
+                }
+                break;
+            case '(':
+                const closingBracketsIndex = arr.indexOf(')', i);
+                if (closingBracketsIndex !== -1) {
+                    arr.splice(i, 1);
+                    arr.splice(`${closingBracketsIndex - 1}`, 1);
+                } else {
+                    result = false;
+                }
+                break;
+            case '<':
+                const closingIndex = arr.indexOf('>', i);
+                if (closingIndex !== -1) {
+                    arr.splice(i, 1);
+                    arr.splice(`${closingIndex - 1}`, 1);
+                } else {
+                    result = false;
+                }
+                break;
+            default:
+                result = false;
+        }
+        if (result === false) {
+            break;
+        }
+    }
+    return result;
 }
 
+isBracketsBalanced('{[(<{[}>)]}')
 
 /**
  * Returns the human readable string of time period specified by the start and end time.
