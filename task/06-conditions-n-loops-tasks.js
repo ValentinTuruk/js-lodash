@@ -431,7 +431,7 @@ function isBracketsBalanced(str) {
 isBracketsBalanced('{[(<{[}>)]}')
 
 /**
- * Returns the human readable string of time period specified by the start and end time.
+ * 14) Returns the human readable string of time period specified by the start and end time.
  * The result string should be constrcuted using the folliwing rules:
  *
  * ---------------------------------------------------------------------
@@ -461,10 +461,43 @@ isBracketsBalanced('{[(<{[}>)]}')
  *   Date('2000-01-01 01:00:00.100'), Date('2015-01-02 03:00:05.000')  => '15 years ago'
  *
  */
+
+const startDate = new Date('2000-01-01 01:00:00.100');
+const endDate = new Date('2000-01-01 01:44:50.100');
+
 function timespanToHumanString(startDate, endDate) {
-    throw new Error('Not implemented');
+    const period = (new Date(endDate - startDate) / 1000);
+    console.log (period);
+    let notification;
+
+    if (0 <= period && period < 45) {
+        notification = 'a few seconds ago';
+    } else if (45 <= period && period < 90) {
+        notification = 'a minute ago';
+    } else if (90 <= period && period < 45 * 60) {
+        notification = `${Math.round(period / 60)} minutes ago`;
+    } else if (45 * 60 <= period && period < 90 * 60) {
+        notification = 'an hour ago';
+    } else if (90 * 60 <= period && period < 22 * 60 * 60) {
+        notification = `${Math.round(period / 60 / 60)} hours ago`;
+    } else if (22 * 60 * 60 <= period && period < 36 * 60 * 60) {
+        notification = 'a day ago';
+    } else if (36 * 60 * 60 <= period && period < 25 * 24 * 60 * 60) {
+        notification = `${Math.round(period / 24 / 60 / 60)} days ago`;
+    } else if (25 * 24 * 60 * 60 <= period && period < 45 * 24 * 60 * 60) {
+        notification = `a month ago`;
+    } else if (45 * 24 * 60 * 60 <= period && period < 345 * 24 * 60 * 60) {
+        notification = `${Math.round(period / 30 / 24 / 60 / 60)} months ago`;
+    } else if (345 * 24 * 60 * 60 <= period && period <= 545 * 24 * 60 * 60) {
+        notification = `a year ago`;
+    } else if (546 * 24 * 60 * 60 <= period) {
+        notification = `${Math.round(period / 365 / 24 / 60 / 60)} years ago`;
+    }
+
+    return notification;
 }
 
+timespanToHumanString(startDate, endDate);
 
 /**
  * Returns the string with n-ary (binary, ternary, etc, where n<=10) representation of specified number.
