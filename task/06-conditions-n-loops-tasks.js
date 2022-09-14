@@ -181,9 +181,13 @@ function doRectanglesOverlap(rect1, rect2) {
  *   
  */
 function isInsideCircle(circle, point) {
-    throw new Error('Not implemented');
+    const sideOne = circle.center.x - point.x;
+    const sideTwo = circle.center.y - point.y;
+    const extention = Math.sqrt(sideOne ** 2 + sideTwo ** 2);
+    return extention <= circle.radius ? true : false;
 }
 
+isInsideCircle({ center: { x: 0, y: 0 }, radius: 10 }, { x: 0, y: 0 });
 
 /**
  * 7) Returns the first non repeated char in the specified strings otherwise returns null.
@@ -467,7 +471,7 @@ const endDate = new Date('2000-01-01 01:44:50.100');
 
 function timespanToHumanString(startDate, endDate) {
     const period = (new Date(endDate - startDate) / 1000);
-    console.log (period);
+    console.log(period);
     let notification;
 
     if (0 <= period && period < 45) {
@@ -500,7 +504,7 @@ function timespanToHumanString(startDate, endDate) {
 timespanToHumanString(startDate, endDate);
 
 /**
- * Returns the string with n-ary (binary, ternary, etc, where n<=10) representation of specified number.
+ * 15) Returns the string with n-ary (binary, ternary, etc, where n<=10) representation of specified number.
  * See more about
  * https://en.wikipedia.org/wiki/Binary_number
  * https://en.wikipedia.org/wiki/Ternary_numeral_system
