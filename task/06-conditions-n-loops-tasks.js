@@ -538,7 +538,7 @@ function toNaryString(num, n) {
 
 
 /**
- * Returns the commom directory path for specified array of full filenames.
+ * 16) Returns the commom directory path for specified array of full filenames.
  *
  * @param {array} pathes
  * @return {string}
@@ -550,9 +550,32 @@ function toNaryString(num, n) {
  *   ['/web/favicon.ico', '/web-scripts/dump', '/webalizer/logs'] => '/'
  */
 function getCommonDirectoryPath(pathes) {
-    throw new Error('Not implemented');
+    let commonPart = '';
+    let commonPath = '';
+    pathes.sort((a, b) => b - a);
+
+    checkPart: for (let i = 0; i < pathes[0].length; ++i) {
+        checkItems: for (let u = 1; u < pathes.length; ++u) {
+            if (pathes[0][i] === pathes[u][i]) {
+                if (u === pathes.length - 1) {
+                    commonPart += pathes[0][i];
+                };
+            } else {
+                break checkPart;
+            }
+        }
+    }
+
+    const commonPathEndIndex = commonPart.lastIndexOf('/');
+
+    if (commonPathEndIndex >= 0) {
+        commonPath = commonPart.slice(0, commonPathEndIndex + 1);
+    };
+
+    return commonPath;
 }
 
+getCommonDirectoryPath(['/web/images/image1.png', '/web/images/image2.png']);
 
 /**
  * Returns the product of two specified matrixes.
