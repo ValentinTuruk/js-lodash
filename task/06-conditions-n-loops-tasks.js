@@ -578,7 +578,7 @@ function getCommonDirectoryPath(pathes) {
 getCommonDirectoryPath(['/web/images/image1.png', '/web/images/image2.png']);
 
 /**
- * Returns the product of two specified matrixes.
+ * 17) Returns the product of two specified matrixes.
  * See details: https://en.wikipedia.org/wiki/Matrix_multiplication
  *
  * @param {array} m1
@@ -601,7 +601,7 @@ function getMatrixProduct(m1, m2) {
 
 
 /**
- * Returns the evaluation of the specified tic-tac-toe position.
+ * 18) Returns the evaluation of the specified tic-tac-toe position.
  * See the details: https://en.wikipedia.org/wiki/Tic-tac-toe
  *
  * Position is provides as 3x3 array with the following values: 'X','0', undefined
@@ -631,9 +631,41 @@ function getMatrixProduct(m1, m2) {
  *
  */
 function evaluateTicTacToePosition(position) {
-    throw new Error('Not implemented');
+    const firstLine = position[0][0] + position[1][0] + position[2][0];
+    const secondLine = position[0][1] + position[1][1] + position[2][1];
+    const thirdLine = position[0][2] + position[1][2] + position[2][2];
+    const fourthLine = position[0][0] + position[0][1] + position[0][2];
+    const fifthLine = position[1][0] + position[1][1] + position[1][2];
+    const sixthLine = position[2][0] + position[2][1] + position[2][2];
+    const seventhLine = position[0][0] + position[1][1] + position[2][2];
+    const eighthLine = position[0][2] + position[1][1] + position[2][0];
+    let winner;
+
+    const winLinesArray = [
+        firstLine,
+        secondLine,
+        thirdLine,
+        fourthLine,
+        fifthLine,
+        sixthLine,
+        seventhLine,
+        eighthLine
+    ];
+
+    for (i of winLinesArray) {
+        switch (i) {
+            case 'XXX':
+                winner = 'X';
+                break;
+            case '000':
+                winner = '0';
+                break;
+        }
+    }
+    return winner;
 }
 
+evaluateTicTacToePosition([['X', , '0'], [, 'X', '0'], [, , 'X']]);
 
 module.exports = {
     getFizzBuzz: getFizzBuzz,
