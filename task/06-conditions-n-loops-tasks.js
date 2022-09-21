@@ -596,9 +596,36 @@ getCommonDirectoryPath(['/web/images/image1.png', '/web/images/image2.png']);
  *
  */
 function getMatrixProduct(m1, m2) {
-    throw new Error('Not implemented');
+    const matrixRowNumber = m1.length;
+    const matrixColumnNumber = m2[0].length;
+    const iterationNumber = m1[0].length;
+    const outerArray = new Array(matrixColumnNumber);
+    for (let a = 0; a < outerArray.length; ++a) {
+        const nArray = new Array(matrixRowNumber).fill(0);
+        outerArray[a] = nArray;
+    }
+
+    for (let n = 0; n < matrixRowNumber; ++n) {
+        for (let u = 0; u < matrixRowNumber; ++u) {
+            let cellSum = 0;
+            let row;
+            let column;
+
+            for (let i = 0; i < iterationNumber; ++i) {
+                const cell = m1[u][i] * m2[i][n];
+                cellSum += cell;
+                row = u;
+                column = n;
+                console.log(cell)
+            }
+            outerArray[row][column] = cellSum;
+        }
+    }
+
+    return outerArray;
 }
 
+getMatrixProduct([[1, 0, 0], [0, 1, 0], [0, 0, 1]], [[1, 2, 3], [4, 5, 6], [7, 8, 9]]);
 
 /**
  * 18) Returns the evaluation of the specified tic-tac-toe position.
