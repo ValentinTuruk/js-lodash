@@ -27,7 +27,7 @@ function Rectangle(width, height) {
     this.height = height;
     this.getArea = function () {
         return this.width * this.height;
-    }    
+    }
 }
 
 const r = new Rectangle(10, 20);
@@ -50,10 +50,10 @@ function getJSON(obj) {
     return jsonObject;
 }
 
-getJSON({ width: 10, height : 20 });
+getJSON({ width: 10, height: 20 });
 
 /**
- * Returns the object of specified type from JSON representation
+ * 3) Returns the object of specified type from JSON representation
  *
  * @param {Object} proto
  * @param {string} json
@@ -64,8 +64,11 @@ getJSON({ width: 10, height : 20 });
  *
  */
 function fromJSON(proto, json) {
-    throw new Error('Not implemented');
+    const jsObject = JSON.parse(json, proto);
+    return jsObject;
 }
+
+fromJSON(Rectangle.prototype, '{"width":10, "height":20}');
 
 
 /**
