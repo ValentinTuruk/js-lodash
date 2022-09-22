@@ -36,7 +36,7 @@ console.log(r.height);
 console.log(r.getArea());
 
 /**
- * Returns the JSON representation of specified object
+ * 2) Returns the JSON representation of specified object
  *
  * @param {object} obj
  * @return {string}
@@ -46,9 +46,11 @@ console.log(r.getArea());
  *    { width: 10, height : 20 } => '{"height":10,"width":20}'
  */
 function getJSON(obj) {
-    throw new Error('Not implemented');
+    const jsonObject = JSON.stringify(obj);
+    return jsonObject;
 }
 
+getJSON({ width: 10, height : 20 });
 
 /**
  * Returns the object of specified type from JSON representation
