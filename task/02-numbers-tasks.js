@@ -21,6 +21,9 @@
  *   5, 10 => 50
  *   5, 5  => 25
  */
+
+// JS
+
 function getRectangleArea(width, height) {
     if (typeof width === 'number' && typeof height === 'number') {
         return width * height;
@@ -30,6 +33,15 @@ function getRectangleArea(width, height) {
 }
 
 getRectangleArea(12, 12);
+
+// Lodash
+
+function getRectangleAreaLo(width, height) {
+   return _.multiply(width, height)
+}
+
+getRectangleAreaLo(12, 12);
+
 
 /**
  * 2) Returns a circumference of circle given by radius.
