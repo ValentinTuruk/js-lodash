@@ -191,6 +191,9 @@ removeLeadingAndTrailingWhitespacesLo('\tHello, World!   ');
  *   'A', 5  => 'AAAAA'
  *   'cat', 3 => 'catcatcat'
  */
+
+// JS
+
 function repeatString(value, count) {
     if (typeof value === 'string' && typeof count === 'number') {
         return value.repeat(count);
@@ -200,6 +203,14 @@ function repeatString(value, count) {
 }
 
 repeatString('Valentin', 2)
+
+// Lodash
+
+function repeatStringLo(value, count) {
+    return _.repeat(value, count);
+}
+
+repeatStringLo('cat', 3)
 
 /**
  * 8) Remove the first occurrence of string inside another string
