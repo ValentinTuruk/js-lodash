@@ -21,22 +21,26 @@
  *   'aa',''    => 'aa'
  *   '',  'bb'  => 'bb'
  */
-function concatenateStrings(value1, value2) {
 
+// JS - #1
+
+function concatenateStrings(value1, value2) {
     if (typeof value1 === 'string' && typeof value2 === 'string') {
-        if (value1 && value2) {
-            return value1 + value2;
-        } else if (value1 && !value2) {
-            return value1;
-        } else if (!value1 && value2) {
-            return value2;
-        }
+        return value1 + value2;
     } else {
         throw new Error('Entered data is invalid');
     }
 }
 
 concatenateStrings('aaa', 'bbb');
+
+// JS - #2
+
+function concatenateStringsSecond(value1, value2) {
+    return value1.concat(value2);
+}
+
+concatenateStringsSecond('aaa', 'bbb');
 
 
 /**
@@ -278,7 +282,7 @@ function getRectangleString(width, height) {
         const bottom = '└' + '─'.repeat(width - 2) + '┘';
         const middle = '│' + ' '.repeat(width - 2) + '│\n';
         const figure = `${top}${middle.repeat(height - 2)}${bottom}`;
-        console.log (figure);
+        console.log(figure);
     } else {
         throw new Error('Entered data is invalid');
     }
