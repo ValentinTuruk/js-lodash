@@ -224,6 +224,9 @@ repeatStringLo('cat', 3)
  *   'I like legends', 'end' => 'I like legs',
  *   'ABABAB','BA' => 'ABAB'
  */
+
+// JS
+
 function removeFirstOccurrences(str, value) {
     if (typeof str === 'string' && typeof value === 'string') {
         return str.replace(value, '');
@@ -233,6 +236,15 @@ function removeFirstOccurrences(str, value) {
 }
 
 removeFirstOccurrences('I like legends', 'end');
+
+// Lodash
+
+function removeFirstOccurrencesLo(str, value) {
+    return _.replace(str, value, '');
+}
+
+removeFirstOccurrencesLo('I like legends', 'end');
+
 
 /**
  * 9) Remove the first and last angle brackets from tag string
