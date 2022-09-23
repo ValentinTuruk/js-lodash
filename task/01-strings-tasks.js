@@ -289,6 +289,9 @@ unbracketTagLo('<Valentin>');
  *   'Thunderstruck' => 'THUNDERSTRUCK'
  *  'abcdefghijklmnopqrstuvwxyz' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
  */
+
+// JS
+
 function convertToUpperCase(str) {
     if (typeof str === 'string') {
         return str.toUpperCase();
@@ -298,6 +301,15 @@ function convertToUpperCase(str) {
 }
 
 convertToUpperCase('Valentin');
+
+// Lodash
+
+function convertToUpperCaseLo(str) {
+  return _.toUpper(str);
+}
+
+convertToUpperCaseLo('Valentin');
+
 
 /**
  * 11) Extracts e-mails from single string with e-mails list delimeted by semicolons
