@@ -257,6 +257,9 @@ removeFirstOccurrencesLo('I like legends', 'end');
  *   '<span>' => 'span'
  *   '<a>' => 'a'
  */
+
+// JS
+
 function unbracketTag(str) {
     if (typeof str === 'string') {
         return str.slice(1, -1);
@@ -266,6 +269,14 @@ function unbracketTag(str) {
 }
 
 unbracketTag('<Valentin>');
+
+// Lodash
+
+function unbracketTagLo(str) {
+   return _.trim(str, '<>')
+}
+
+unbracketTagLo('<Valentin>');
 
 
 /**
