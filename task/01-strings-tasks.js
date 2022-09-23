@@ -77,6 +77,9 @@ getStringLength('eightttt');
  *   'John','Doe'      => 'Hello, John Doe!'
  *   'Chuck','Norris'  => 'Hello, Chuck Norris!'
  */
+
+// JS 
+
 function getStringFromTemplate(firstName, lastName) {
     if (typeof firstName === 'string' && typeof lastName === 'string') {
         return (`Hello, ${firstName} ${lastName}!`);
@@ -86,6 +89,14 @@ function getStringFromTemplate(firstName, lastName) {
 }
 
 getStringFromTemplate('Valentin', 'Turuk');
+
+// Lodash
+
+function getStringFromTemplateLo(firstName, lastName) {
+    return _.replace('Hello, Name Surname!', 'Name Surname', `${firstName} ${lastName}`);
+}
+
+getStringFromTemplateLo('Valentin', 'Turuk');
 
 /**
  * 4) Extracts a name from template string 'Hello, First_Name Last_Name!'.
