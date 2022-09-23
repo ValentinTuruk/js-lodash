@@ -100,12 +100,12 @@ getStringFromTemplateLo('Valentin', 'Turuk');
 
 // Lodash #2
 
-function getStringFromTemplateLo(firstName, lastName) {
+function getStringFromTemplateLoTwo(firstName, lastName) {
     const greeting = _.template('Hello, <%= client %>!');
     return greeting({ 'client': `${firstName} ${lastName}` });
 }
 
-getStringFromTemplateLo('Valentin', 'Turuk');
+getStringFromTemplateLoTwo('Valentin', 'Turuk');
 
 /**
  * 4) Extracts a name from template string 'Hello, First_Name Last_Name!'.
@@ -158,6 +158,9 @@ getFirstChar('Valentin Turuk');
  *   'cat'              => 'cat'
  *   '\tHello, World! ' => 'Hello, World!'
  */
+
+// JS
+
 function removeLeadingAndTrailingWhitespaces(value) {
     if (typeof value === 'string') {
         return value.trim();
@@ -167,6 +170,15 @@ function removeLeadingAndTrailingWhitespaces(value) {
 }
 
 removeLeadingAndTrailingWhitespaces('\tHello, World!   ');
+
+// Lodash
+
+function removeLeadingAndTrailingWhitespacesLo(value) {
+    return _.trim(value)
+}
+
+removeLeadingAndTrailingWhitespacesLo('\tHello, World!   ');
+
 
 /**
  * 7) Returns a string that repeated the specified number of times.
