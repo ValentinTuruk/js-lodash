@@ -90,10 +90,19 @@ function getStringFromTemplate(firstName, lastName) {
 
 getStringFromTemplate('Valentin', 'Turuk');
 
-// Lodash
+// Lodash #1
 
 function getStringFromTemplateLo(firstName, lastName) {
     return _.replace('Hello, Name Surname!', 'Name Surname', `${firstName} ${lastName}`);
+}
+
+getStringFromTemplateLo('Valentin', 'Turuk');
+
+// Lodash #2
+
+function getStringFromTemplateLo(firstName, lastName) {
+    const greeting = _.template('Hello, <%= client %>!');
+    return greeting({ 'client': `${firstName} ${lastName}` });
 }
 
 getStringFromTemplateLo('Valentin', 'Turuk');
