@@ -273,7 +273,7 @@ unbracketTag('<Valentin>');
 // Lodash
 
 function unbracketTagLo(str) {
-   return _.trim(str, '<>')
+    return _.trim(str, '<>')
 }
 
 unbracketTagLo('<Valentin>');
@@ -305,7 +305,7 @@ convertToUpperCase('Valentin');
 // Lodash
 
 function convertToUpperCaseLo(str) {
-  return _.toUpper(str);
+    return _.toUpper(str);
 }
 
 convertToUpperCaseLo('Valentin');
@@ -321,6 +321,9 @@ convertToUpperCaseLo('Valentin');
  *   'angus.young@gmail.com;brian.johnson@hotmail.com;bon.scott@yahoo.com' => ['angus.young@gmail.com', 'brian.johnson@hotmail.com', 'bon.scott@yahoo.com']
  *   'info@gmail.com' => ['info@gmail.com']
  */
+
+// JS
+
 function extractEmails(str) {
     if (typeof str === 'string') {
         return str.split(';');
@@ -330,6 +333,14 @@ function extractEmails(str) {
 }
 
 extractEmails('angus.young@gmail.com;brian.johnson@hotmail.com;bon.scott@yahoo.com');
+
+// Lodash
+
+function extractEmailsLo(str) {
+    return _.split(str, ';');
+}
+
+extractEmailsLo('angus.young@gmail.com;brian.johnson@hotmail.com;bon.scott@yahoo.com');
 
 /**
  * 12) Returns the string representation of rectangle with specified width and height
