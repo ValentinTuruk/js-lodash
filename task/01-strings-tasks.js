@@ -365,6 +365,9 @@ extractEmailsLo('angus.young@gmail.com;brian.johnson@hotmail.com;bon.scott@yahoo
  *             '└──────────┘\n'
  *
  */
+
+// JS
+
 function getRectangleString(width, height) {
     if (typeof width === 'number' && typeof height === 'number') {
         const top = '┌' + '─'.repeat(width - 2) + '┐\n';
@@ -378,6 +381,19 @@ function getRectangleString(width, height) {
 }
 
 getRectangleString(20, 13);
+
+// Lodash
+
+function getRectangleStringLo(width, height) {
+    const top = '┌' + _.repeat('─', width - 2) + '┐\n';
+    const bottom = '└' + _.repeat('─', width - 2) + '┘';
+    const middle = '│' + _.repeat(' ', width - 2) + '│\n';
+    const figure = `${top}${_.repeat(middle, height - 2)}${bottom}`;
+    console.log(figure);
+}
+
+getRectangleStringLo(20, 13);
+
 
 /**
  * 13) Encode specified string with ROT13 cipher
