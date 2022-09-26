@@ -37,7 +37,7 @@ getRectangleArea(12, 12);
 // Lodash
 
 function getRectangleAreaLo(width, height) {
-   return _.multiply(width, height)
+    return _.multiply(width, height)
 }
 
 getRectangleAreaLo(12, 12);
@@ -70,7 +70,7 @@ getCicleCircumference(5);
 // Lodash
 
 function getCicleCircumferenceLo(radius) {
-   return 2*_.multiply(Math.PI, radius);
+    return 2 * _.multiply(Math.PI, radius);
 }
 
 getCicleCircumferenceLo(5);
@@ -104,7 +104,7 @@ getAverage(-3, 5);
 // Lodash
 
 function getAverageLo(value1, value2) {
-   return _.mean([value1, value2]);
+    return _.mean([value1, value2]);
 }
 
 getAverageLo(-3, 5);
@@ -125,6 +125,9 @@ getAverageLo(-3, 5);
  *   (0,0) (1,0)    => 1
  *   (-5,0) (10,-10) => 18.027756377319946
  */
+
+// JS
+
 function getDistanceBetweenPoints(x1, y1, x2, y2) {
     if (typeof x1 === 'number' && typeof x2 === 'number' && typeof y1 === 'number' && typeof y2 === 'number') {
         return Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
@@ -134,6 +137,15 @@ function getDistanceBetweenPoints(x1, y1, x2, y2) {
 }
 
 getDistanceBetweenPoints(-5, 0, 10, -10)
+
+// Lodash
+
+function getDistanceBetweenPointsLo(x1, y1, x2, y2) {
+    return Math.sqrt(_.sum([Math.pow(_.subtract(x1, x2), 2), Math.pow(_.subtract(y2, y1), 2)]));
+}
+
+getDistanceBetweenPointsLo(-5, 0, 10, -10)
+
 
 /**
  * 5) Returns a root of linear equation a*x + b = 0 given by coefficients a and b.
