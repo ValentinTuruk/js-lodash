@@ -159,6 +159,9 @@ getDistanceBetweenPointsLo(-5, 0, 10, -10)
  *   x + 8 = 0       => -8
  *   5*x = 0         => 0
  */
+
+// JS
+
 function getLinearEquationRoot(a, b) {
     if (typeof a === 'number' && typeof b === 'number') {
         return (0 - b) / a;
@@ -168,6 +171,14 @@ function getLinearEquationRoot(a, b) {
 }
 
 getLinearEquationRoot(5, 0)
+
+// Lodash
+
+function getLinearEquationRootLo(a, b) {
+    return _.divide(_.subtract(0, b), a);
+}
+
+getLinearEquationRootLo(5, 0)
 
 
 /**
