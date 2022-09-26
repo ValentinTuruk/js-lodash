@@ -252,7 +252,7 @@ getLastDigit(2654);
 // Lodash
 
 function getLastDigitLo(value) {
-   return _.toString(value).slice(-1);
+    return _.toString(value).slice(-1);
 }
 
 getLastDigitLo(2654);
@@ -304,6 +304,9 @@ parseNumberFromStringLo('-525.5');
  *   3,3,3   => 5.196152422706632
  *   1,2,3   => 3.741657386773941
  */
+
+// JS
+
 function getParallelipidedDiagonal(a, b, c) {
     if (typeof a === 'number' && typeof b === 'number' && typeof c === 'number') {
         return Math.sqrt(a ** 2 + b ** 2 + c ** 2);
@@ -313,6 +316,15 @@ function getParallelipidedDiagonal(a, b, c) {
 }
 
 getParallelipidedDiagonal(1, 2, 3)
+
+// Lodash
+
+function getParallelipidedDiagonalLo(a, b, c) {
+    return Math.sqrt(_.sum([Math.pow(a, 2), Math.pow(b, 2), Math.pow(c, 2)]));
+}
+
+getParallelipidedDiagonalLo(1, 2, 3)
+
 
 /**
  * 10) Returns the number rounded to specified power of 10.
