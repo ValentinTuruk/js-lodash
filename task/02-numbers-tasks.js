@@ -343,6 +343,9 @@ getParallelipidedDiagonalLo(1, 2, 3)
  *   1678, 2  => 1700
  *   1678, 3  => 2000
  */
+
+// JS
+
 function roundToPowerOfTen(num, pow) {
     if (typeof num === 'number' && typeof pow === 'number') {
         return Math.round(num / 10 ** pow) * 10 ** pow;
@@ -352,6 +355,15 @@ function roundToPowerOfTen(num, pow) {
 }
 
 roundToPowerOfTen(1678, 3);
+
+// Lodash
+
+function roundToPowerOfTenLo(num, pow) {
+    return _.round(num, -pow);
+}
+
+roundToPowerOfTenLo(1678, 3);
+
 
 /**
  * 11) Returns true is the number is prime; otherwise false.
