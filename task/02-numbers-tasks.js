@@ -88,6 +88,9 @@ getCicleCircumferenceLo(5);
  *  10, 0  => 5
  *  -3, 3  => 0
  */
+
+// JS
+
 function getAverage(value1, value2) {
     if (typeof value1 === 'number' && typeof value2 === 'number') {
         return (value1 + value2) / 2;
@@ -97,6 +100,15 @@ function getAverage(value1, value2) {
 }
 
 getAverage(-3, 5);
+
+// Lodash
+
+function getAverageLo(value1, value2) {
+   return _.mean([value1, value2]);
+}
+
+getAverageLo(-3, 5);
+
 
 /**
  * 4) Returns a distance beetween two points by cartesian coordinates.
