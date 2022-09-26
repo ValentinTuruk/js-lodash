@@ -198,6 +198,9 @@ getLinearEquationRootLo(5, 0)
  *   (0,1) (0,1)     => 0
  *   (0,1) (1,2)     => 0
  */
+
+// JS
+
 function getAngleBetweenVectors(x1, y1, x2, y2) {
     if (typeof x1 === 'number' && typeof x2 === 'number' && typeof y1 === 'number' && typeof y2 === 'number') {
         const cos = (x1 * x2 + y1 * y2) / (Math.sqrt(x1 ** 2 + y1 ** 2) * Math.sqrt(x2 ** 2 + y2 ** 2));
@@ -209,6 +212,17 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
 }
 
 getAngleBetweenVectors(1, 3, 4, 2);
+
+// Lodash
+
+function getAngleBetweenVectorsLo(x1, y1, x2, y2) {
+    const cos = _.divide(_.sum([_.multiply(x1, x2), _.multiply(y1, y2)]), _.multiply(Math.sqrt(_.sum([Math.pow(x1, 2), Math.pow(y1, 2)])), Math.sqrt(_.sum([Math.pow(x2, 2), Math.pow(y2, 2)]))));
+    const angleRadians = Math.acos(cos);
+    return angleRadians
+}
+
+getAngleBetweenVectorsLo(1, 3, 4, 2);
+
 
 /**
  * 7) Returns a last digit of a integer number.
