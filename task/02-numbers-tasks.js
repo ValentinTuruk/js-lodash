@@ -21,6 +21,9 @@
  *   5, 10 => 50
  *   5, 5  => 25
  */
+
+// JS
+
 function getRectangleArea(width, height) {
     if (typeof width === 'number' && typeof height === 'number') {
         return width * height;
@@ -30,6 +33,15 @@ function getRectangleArea(width, height) {
 }
 
 getRectangleArea(12, 12);
+
+// Lodash
+
+function getRectangleAreaLo(width, height) {
+    return _.multiply(width, height)
+}
+
+getRectangleAreaLo(12, 12);
+
 
 /**
  * 2) Returns a circumference of circle given by radius.
@@ -42,6 +54,9 @@ getRectangleArea(12, 12);
  *   3.14 => 19.729201864543903
  *   0    => 0
  */
+
+// JS
+
 function getCicleCircumference(radius) {
     if (typeof radius === 'number') {
         return 2 * Math.PI * radius;
@@ -51,6 +66,15 @@ function getCicleCircumference(radius) {
 }
 
 getCicleCircumference(5);
+
+// Lodash
+
+function getCicleCircumferenceLo(radius) {
+    return 2 * _.multiply(Math.PI, radius);
+}
+
+getCicleCircumferenceLo(5);
+
 
 /**
  * 3) Returns an average of two given numbers.
@@ -64,6 +88,9 @@ getCicleCircumference(5);
  *  10, 0  => 5
  *  -3, 3  => 0
  */
+
+// JS
+
 function getAverage(value1, value2) {
     if (typeof value1 === 'number' && typeof value2 === 'number') {
         return (value1 + value2) / 2;
@@ -73,6 +100,15 @@ function getAverage(value1, value2) {
 }
 
 getAverage(-3, 5);
+
+// Lodash
+
+function getAverageLo(value1, value2) {
+    return _.mean([value1, value2]);
+}
+
+getAverageLo(-3, 5);
+
 
 /**
  * 4) Returns a distance beetween two points by cartesian coordinates.
@@ -89,6 +125,9 @@ getAverage(-3, 5);
  *   (0,0) (1,0)    => 1
  *   (-5,0) (10,-10) => 18.027756377319946
  */
+
+// JS
+
 function getDistanceBetweenPoints(x1, y1, x2, y2) {
     if (typeof x1 === 'number' && typeof x2 === 'number' && typeof y1 === 'number' && typeof y2 === 'number') {
         return Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
@@ -98,6 +137,15 @@ function getDistanceBetweenPoints(x1, y1, x2, y2) {
 }
 
 getDistanceBetweenPoints(-5, 0, 10, -10)
+
+// Lodash
+
+function getDistanceBetweenPointsLo(x1, y1, x2, y2) {
+    return Math.sqrt(_.sum([Math.pow(_.subtract(x1, x2), 2), Math.pow(_.subtract(y2, y1), 2)]));
+}
+
+getDistanceBetweenPointsLo(-5, 0, 10, -10)
+
 
 /**
  * 5) Returns a root of linear equation a*x + b = 0 given by coefficients a and b.
@@ -111,6 +159,9 @@ getDistanceBetweenPoints(-5, 0, 10, -10)
  *   x + 8 = 0       => -8
  *   5*x = 0         => 0
  */
+
+// JS
+
 function getLinearEquationRoot(a, b) {
     if (typeof a === 'number' && typeof b === 'number') {
         return (0 - b) / a;
@@ -120,6 +171,14 @@ function getLinearEquationRoot(a, b) {
 }
 
 getLinearEquationRoot(5, 0)
+
+// Lodash
+
+function getLinearEquationRootLo(a, b) {
+    return _.divide(_.subtract(0, b), a);
+}
+
+getLinearEquationRootLo(5, 0)
 
 
 /**
@@ -139,6 +198,9 @@ getLinearEquationRoot(5, 0)
  *   (0,1) (0,1)     => 0
  *   (0,1) (1,2)     => 0
  */
+
+// JS
+
 function getAngleBetweenVectors(x1, y1, x2, y2) {
     if (typeof x1 === 'number' && typeof x2 === 'number' && typeof y1 === 'number' && typeof y2 === 'number') {
         const cos = (x1 * x2 + y1 * y2) / (Math.sqrt(x1 ** 2 + y1 ** 2) * Math.sqrt(x2 ** 2 + y2 ** 2));
@@ -150,6 +212,17 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
 }
 
 getAngleBetweenVectors(1, 3, 4, 2);
+
+// Lodash
+
+function getAngleBetweenVectorsLo(x1, y1, x2, y2) {
+    const cos = _.divide(_.sum([_.multiply(x1, x2), _.multiply(y1, y2)]), _.multiply(Math.sqrt(_.sum([Math.pow(x1, 2), Math.pow(y1, 2)])), Math.sqrt(_.sum([Math.pow(x2, 2), Math.pow(y2, 2)]))));
+    const angleRadians = Math.acos(cos);
+    return angleRadians
+}
+
+getAngleBetweenVectorsLo(1, 3, 4, 2);
+
 
 /**
  * 7) Returns a last digit of a integer number.
@@ -163,6 +236,9 @@ getAngleBetweenVectors(1, 3, 4, 2);
  *     5     => 5
  *     0     => 0
  */
+
+// JS
+
 function getLastDigit(value) {
     if (typeof value === 'number') {
         return value.toString().slice(-1);
@@ -172,6 +248,15 @@ function getLastDigit(value) {
 }
 
 getLastDigit(2654);
+
+// Lodash
+
+function getLastDigitLo(value) {
+    return _.toString(value).slice(-1);
+}
+
+getLastDigitLo(2654);
+
 
 /**
  * 8) Returns a number by given string representation.
@@ -184,6 +269,9 @@ getLastDigit(2654);
  *     '37'     => 37
  * '-525.5'     => -525.5
  */
+
+// JS
+
 function parseNumberFromString(value) {
     if (typeof value === 'string') {
         return +value
@@ -193,6 +281,15 @@ function parseNumberFromString(value) {
 }
 
 parseNumberFromString('-525.5');
+
+// Lodash
+
+function parseNumberFromStringLo(value) {
+    return _.toNumber(value);
+}
+
+parseNumberFromStringLo('-525.5');
+
 
 /**
  * 9) Returns a diagonal length of the rectangular parallelepiped given by its sides a,b,c.
@@ -207,6 +304,9 @@ parseNumberFromString('-525.5');
  *   3,3,3   => 5.196152422706632
  *   1,2,3   => 3.741657386773941
  */
+
+// JS
+
 function getParallelipidedDiagonal(a, b, c) {
     if (typeof a === 'number' && typeof b === 'number' && typeof c === 'number') {
         return Math.sqrt(a ** 2 + b ** 2 + c ** 2);
@@ -216,6 +316,15 @@ function getParallelipidedDiagonal(a, b, c) {
 }
 
 getParallelipidedDiagonal(1, 2, 3)
+
+// Lodash
+
+function getParallelipidedDiagonalLo(a, b, c) {
+    return Math.sqrt(_.sum([Math.pow(a, 2), Math.pow(b, 2), Math.pow(c, 2)]));
+}
+
+getParallelipidedDiagonalLo(1, 2, 3)
+
 
 /**
  * 10) Returns the number rounded to specified power of 10.
@@ -234,6 +343,9 @@ getParallelipidedDiagonal(1, 2, 3)
  *   1678, 2  => 1700
  *   1678, 3  => 2000
  */
+
+// JS
+
 function roundToPowerOfTen(num, pow) {
     if (typeof num === 'number' && typeof pow === 'number') {
         return Math.round(num / 10 ** pow) * 10 ** pow;
@@ -243,6 +355,15 @@ function roundToPowerOfTen(num, pow) {
 }
 
 roundToPowerOfTen(1678, 3);
+
+// Lodash
+
+function roundToPowerOfTenLo(num, pow) {
+    return _.round(num, -pow);
+}
+
+roundToPowerOfTenLo(1678, 3);
+
 
 /**
  * 11) Returns true is the number is prime; otherwise false.
@@ -294,6 +415,9 @@ isPrime(113);
  *   toNumber(42, 0) => 42
  *   toNumber(new Number(42), 0) => 42
  */
+
+// JS
+
 function toNumber(value, def) {
     if (value >= 0 || value < 0) {
         return +value;
@@ -303,6 +427,14 @@ function toNumber(value, def) {
 }
 
 toNumber('test', 0);
+
+// Lodash
+
+function toNumberLo(value, def) {
+   return _.toNumber(value) || def;
+}
+
+toNumberLo('test', 0);
 
 module.exports = {
     getRectangleArea: getRectangleArea,
