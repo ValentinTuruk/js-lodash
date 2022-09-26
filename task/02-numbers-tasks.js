@@ -236,6 +236,9 @@ getAngleBetweenVectorsLo(1, 3, 4, 2);
  *     5     => 5
  *     0     => 0
  */
+
+// JS
+
 function getLastDigit(value) {
     if (typeof value === 'number') {
         return value.toString().slice(-1);
@@ -245,6 +248,15 @@ function getLastDigit(value) {
 }
 
 getLastDigit(2654);
+
+// Lodash
+
+function getLastDigitLo(value) {
+   return _.toString(value).slice(-1);
+}
+
+getLastDigitLo(2654);
+
 
 /**
  * 8) Returns a number by given string representation.
