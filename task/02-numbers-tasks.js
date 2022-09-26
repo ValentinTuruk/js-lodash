@@ -415,6 +415,9 @@ isPrime(113);
  *   toNumber(42, 0) => 42
  *   toNumber(new Number(42), 0) => 42
  */
+
+// JS
+
 function toNumber(value, def) {
     if (value >= 0 || value < 0) {
         return +value;
@@ -424,6 +427,14 @@ function toNumber(value, def) {
 }
 
 toNumber('test', 0);
+
+// Lodash
+
+function toNumberLo(value, def) {
+   return _.toNumber(value) || def;
+}
+
+toNumberLo('test', 0);
 
 module.exports = {
     getRectangleArea: getRectangleArea,
