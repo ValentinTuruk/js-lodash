@@ -269,6 +269,9 @@ getLastDigitLo(2654);
  *     '37'     => 37
  * '-525.5'     => -525.5
  */
+
+// JS
+
 function parseNumberFromString(value) {
     if (typeof value === 'string') {
         return +value
@@ -278,6 +281,15 @@ function parseNumberFromString(value) {
 }
 
 parseNumberFromString('-525.5');
+
+// Lodash
+
+function parseNumberFromStringLo(value) {
+    return _.toNumber(value);
+}
+
+parseNumberFromStringLo('-525.5');
+
 
 /**
  * 9) Returns a diagonal length of the rectangular parallelepiped given by its sides a,b,c.
