@@ -54,6 +54,9 @@ getRectangleAreaLo(12, 12);
  *   3.14 => 19.729201864543903
  *   0    => 0
  */
+
+// JS
+
 function getCicleCircumference(radius) {
     if (typeof radius === 'number') {
         return 2 * Math.PI * radius;
@@ -63,6 +66,15 @@ function getCicleCircumference(radius) {
 }
 
 getCicleCircumference(5);
+
+// Lodash
+
+function getCicleCircumferenceLo(radius) {
+   return 2*_.multiply(Math.PI, radius);
+}
+
+getCicleCircumferenceLo(5);
+
 
 /**
  * 3) Returns an average of two given numbers.
