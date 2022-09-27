@@ -21,22 +21,26 @@
  *   'aa',''    => 'aa'
  *   '',  'bb'  => 'bb'
  */
-function concatenateStrings(value1, value2) {
 
+// JS - #1
+
+function concatenateStrings(value1, value2) {
     if (typeof value1 === 'string' && typeof value2 === 'string') {
-        if (value1 && value2) {
-            return value1 + value2;
-        } else if (value1 && !value2) {
-            return value1;
-        } else if (!value1 && value2) {
-            return value2;
-        }
+        return value1 + value2;
     } else {
         throw new Error('Entered data is invalid');
     }
 }
 
 concatenateStrings('aaa', 'bbb');
+
+// JS - #2
+
+function concatenateStringsSecond(value1, value2) {
+    return value1.concat(value2);
+}
+
+concatenateStringsSecond('aaa', 'bbb');
 
 
 /**
@@ -73,6 +77,9 @@ getStringLength('eightttt');
  *   'John','Doe'      => 'Hello, John Doe!'
  *   'Chuck','Norris'  => 'Hello, Chuck Norris!'
  */
+
+// JS 
+
 function getStringFromTemplate(firstName, lastName) {
     if (typeof firstName === 'string' && typeof lastName === 'string') {
         return (`Hello, ${firstName} ${lastName}!`);
@@ -82,6 +89,23 @@ function getStringFromTemplate(firstName, lastName) {
 }
 
 getStringFromTemplate('Valentin', 'Turuk');
+
+// Lodash #1
+
+function getStringFromTemplateLo(firstName, lastName) {
+    return _.replace('Hello, Name Surname!', 'Name Surname', `${firstName} ${lastName}`);
+}
+
+getStringFromTemplateLo('Valentin', 'Turuk');
+
+// Lodash #2
+
+function getStringFromTemplateLoTwo(firstName, lastName) {
+    const greeting = _.template('Hello, <%= client %>!');
+    return greeting({ 'client': `${firstName} ${lastName}` });
+}
+
+getStringFromTemplateLoTwo('Valentin', 'Turuk');
 
 /**
  * 4) Extracts a name from template string 'Hello, First_Name Last_Name!'.
@@ -134,6 +158,9 @@ getFirstChar('Valentin Turuk');
  *   'cat'              => 'cat'
  *   '\tHello, World! ' => 'Hello, World!'
  */
+
+// JS
+
 function removeLeadingAndTrailingWhitespaces(value) {
     if (typeof value === 'string') {
         return value.trim();
@@ -143,6 +170,15 @@ function removeLeadingAndTrailingWhitespaces(value) {
 }
 
 removeLeadingAndTrailingWhitespaces('\tHello, World!   ');
+
+// Lodash
+
+function removeLeadingAndTrailingWhitespacesLo(value) {
+    return _.trim(value)
+}
+
+removeLeadingAndTrailingWhitespacesLo('\tHello, World!   ');
+
 
 /**
  * 7) Returns a string that repeated the specified number of times.
@@ -155,6 +191,9 @@ removeLeadingAndTrailingWhitespaces('\tHello, World!   ');
  *   'A', 5  => 'AAAAA'
  *   'cat', 3 => 'catcatcat'
  */
+
+// JS
+
 function repeatString(value, count) {
     if (typeof value === 'string' && typeof count === 'number') {
         return value.repeat(count);
@@ -164,6 +203,14 @@ function repeatString(value, count) {
 }
 
 repeatString('Valentin', 2)
+
+// Lodash
+
+function repeatStringLo(value, count) {
+    return _.repeat(value, count);
+}
+
+repeatStringLo('cat', 3)
 
 /**
  * 8) Remove the first occurrence of string inside another string
@@ -177,6 +224,9 @@ repeatString('Valentin', 2)
  *   'I like legends', 'end' => 'I like legs',
  *   'ABABAB','BA' => 'ABAB'
  */
+
+// JS
+
 function removeFirstOccurrences(str, value) {
     if (typeof str === 'string' && typeof value === 'string') {
         return str.replace(value, '');
@@ -186,6 +236,15 @@ function removeFirstOccurrences(str, value) {
 }
 
 removeFirstOccurrences('I like legends', 'end');
+
+// Lodash
+
+function removeFirstOccurrencesLo(str, value) {
+    return _.replace(str, value, '');
+}
+
+removeFirstOccurrencesLo('I like legends', 'end');
+
 
 /**
  * 9) Remove the first and last angle brackets from tag string
@@ -198,6 +257,9 @@ removeFirstOccurrences('I like legends', 'end');
  *   '<span>' => 'span'
  *   '<a>' => 'a'
  */
+
+// JS
+
 function unbracketTag(str) {
     if (typeof str === 'string') {
         return str.slice(1, -1);
@@ -207,6 +269,14 @@ function unbracketTag(str) {
 }
 
 unbracketTag('<Valentin>');
+
+// Lodash
+
+function unbracketTagLo(str) {
+    return _.trim(str, '<>')
+}
+
+unbracketTagLo('<Valentin>');
 
 
 /**
@@ -219,6 +289,9 @@ unbracketTag('<Valentin>');
  *   'Thunderstruck' => 'THUNDERSTRUCK'
  *  'abcdefghijklmnopqrstuvwxyz' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
  */
+
+// JS
+
 function convertToUpperCase(str) {
     if (typeof str === 'string') {
         return str.toUpperCase();
@@ -228,6 +301,15 @@ function convertToUpperCase(str) {
 }
 
 convertToUpperCase('Valentin');
+
+// Lodash
+
+function convertToUpperCaseLo(str) {
+    return _.toUpper(str);
+}
+
+convertToUpperCaseLo('Valentin');
+
 
 /**
  * 11) Extracts e-mails from single string with e-mails list delimeted by semicolons
@@ -239,6 +321,9 @@ convertToUpperCase('Valentin');
  *   'angus.young@gmail.com;brian.johnson@hotmail.com;bon.scott@yahoo.com' => ['angus.young@gmail.com', 'brian.johnson@hotmail.com', 'bon.scott@yahoo.com']
  *   'info@gmail.com' => ['info@gmail.com']
  */
+
+// JS
+
 function extractEmails(str) {
     if (typeof str === 'string') {
         return str.split(';');
@@ -248,6 +333,14 @@ function extractEmails(str) {
 }
 
 extractEmails('angus.young@gmail.com;brian.johnson@hotmail.com;bon.scott@yahoo.com');
+
+// Lodash
+
+function extractEmailsLo(str) {
+    return _.split(str, ';');
+}
+
+extractEmailsLo('angus.young@gmail.com;brian.johnson@hotmail.com;bon.scott@yahoo.com');
 
 /**
  * 12) Returns the string representation of rectangle with specified width and height
@@ -272,19 +365,35 @@ extractEmails('angus.young@gmail.com;brian.johnson@hotmail.com;bon.scott@yahoo.c
  *             '└──────────┘\n'
  *
  */
+
+// JS
+
 function getRectangleString(width, height) {
     if (typeof width === 'number' && typeof height === 'number') {
         const top = '┌' + '─'.repeat(width - 2) + '┐\n';
         const bottom = '└' + '─'.repeat(width - 2) + '┘';
         const middle = '│' + ' '.repeat(width - 2) + '│\n';
         const figure = `${top}${middle.repeat(height - 2)}${bottom}`;
-        console.log (figure);
+        console.log(figure);
     } else {
         throw new Error('Entered data is invalid');
     }
 }
 
 getRectangleString(20, 13);
+
+// Lodash
+
+function getRectangleStringLo(width, height) {
+    const top = '┌' + _.repeat('─', width - 2) + '┐\n';
+    const bottom = '└' + _.repeat('─', width - 2) + '┘';
+    const middle = '│' + _.repeat(' ', width - 2) + '│\n';
+    const figure = `${top}${_.repeat(middle, height - 2)}${bottom}`;
+    console.log(figure);
+}
+
+getRectangleStringLo(20, 13);
+
 
 /**
  * 13) Encode specified string with ROT13 cipher

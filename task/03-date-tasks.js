@@ -91,8 +91,6 @@ const endDate = new Date(2000, 1, 1, 15, 20, 10, 453);
 
 function timeSpanToString(startDate, endDate) {
    const timespan = new Date(endDate - startDate + new Date().getTimezoneOffset() * 60 * 1000)
-
-   console.log(timespan);
    const hh = timespan.getHours();
    const mm = timespan.getMinutes();
    const ss = timespan.getSeconds();
@@ -105,7 +103,6 @@ function timeSpanToString(startDate, endDate) {
 
    formatTimesplan.push(('00' + sss).slice(-3));
 
-   console.log(formatTimesplan);
    return `${formatTimesplan[0]}:${formatTimesplan[1]}:${formatTimesplan[2]}.${formatTimesplan[3]}`
 }
 
@@ -137,9 +134,8 @@ function angleBetweenClockHands(date) {
    } else {
       angleGrad = ((hours - 12) + (minutes / 60)) * 30 - minutes * 6;
    }
-   console.log(angleGrad);
+   
    const angleRadian = angleGrad * Math.PI / 180;
-
    return angleRadian;
 }
 
