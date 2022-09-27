@@ -22,11 +22,22 @@
  *    ['Array', 'Number', 'string'], 'Date'    => -1 
  *    [0, 1, 2, 3, 4, 5], 5    => 5
  */
+
+// JS
+
 function findElement(arr, value) {
    return arr.indexOf(value);
 }
 
 findElement(['Array', 'Number', 'string'], 'Date');
+
+// Lodash
+
+function findElementLo(arr, value) {
+   return _.indexOf(arr, value);
+}
+
+findElementLo(['Ace', 10, true], 10);
 
 /**
  * 2) Generates an array of odd numbers of the specified length
