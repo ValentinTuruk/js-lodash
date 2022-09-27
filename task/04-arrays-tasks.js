@@ -121,7 +121,7 @@ getArrayOfPositives([-1, 2, -5, -4, 0]);
 // Lodash
 
 function getArrayOfPositivesLo(arr) {
-   return _.filter(arr, (i) => {return i > 0})
+   return _.filter(arr, (i) => { return i > 0 })
 }
 
 getArrayOfPositivesLo([-1, 2, -5, -4, 0]);
@@ -156,7 +156,7 @@ getArrayOfStrings([0, 1, 'cat', 3, true, 'dog']);
 // Lodash
 
 function getArrayOfStringsLo(arr) {
-   return _.filter(arr, (i) => {return typeof (i) === 'string'})
+   return _.filter(arr, (i) => { return typeof (i) === 'string' })
 }
 
 getArrayOfStringsLo([0, 1, 'cat', 3, true, 'dog']);
@@ -192,7 +192,7 @@ removeFalsyValues([false, 0, NaN, '', undefined, 'cat', NaN, true, ''])
 // Lodash
 
 function removeFalsyValuesLo(arr) {
-  return _.compact(arr);
+   return _.compact(arr);
 }
 
 removeFalsyValuesLo([false, 0, NaN, '', undefined, 'cat', NaN, true, ''])
@@ -221,7 +221,7 @@ getUpperCaseStrings(['permanent-internship', 'glutinous-shriek', 'multiplicative
 // Lodash
 
 function getUpperCaseStringsLo(arr) {
-   return _.map(arr, (i) => {return _.upperCase(i)});
+   return _.map(arr, (i) => { return _.upperCase(i) });
 }
 
 getUpperCaseStringsLo(['permanent-internship', 'glutinous-shriek', 'multiplicative-elevation', 'a', 'b', 'c', 'd', 'e', 'f', 'g'])
@@ -237,11 +237,23 @@ getUpperCaseStringsLo(['permanent-internship', 'glutinous-shriek', 'multiplicati
  *    [ '', 'a', 'bc', 'def', 'ghij' ]  => [ 0, 1, 2, 3, 4 ]
  *    [ 'angular', 'react', 'ember' ] => [ 7, 5, 5 ]
  */
+
+//JS 
+
 function getStringsLength(arr) {
    return arr.map(item => item.length);
 }
 
 getStringsLength(['', 'a', 'bc', 'def', 'ghij', 'react', 'ember'])
+
+// Lodash
+
+function getStringsLengthLo(arr) {
+   return _.map(arr, i => i.length);
+}
+
+getStringsLengthLo(['', 'a', 'bc', 'def', 'ghij', 'react', 'ember'])
+
 
 /**
  * 9) Inserts the item into specified array at specified index
