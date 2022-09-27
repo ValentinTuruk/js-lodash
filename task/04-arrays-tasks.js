@@ -75,11 +75,22 @@ generateOdds(5);
  *    [0, 1, 2, 3, 4, 5] => [0, 1, 2, 3, 4, 5,   0, 1, 2, 3, 4, 5]
  *    [] => [] 
  */
+
+// JS
+
 function doubleArray(arr) {
    return arr.concat(arr);
 }
 
 doubleArray(['Ace', 10, true]);
+
+// Lodash
+
+function doubleArrayLo(arr) {
+   return _.concat(arr, arr);
+}
+
+doubleArrayLo(['Ace', 10, true]);
 
 /**
  * 4) Returns an array of positive numbers from the specified array in original order
