@@ -174,6 +174,9 @@ getArrayOfStringsLo([0, 1, 'cat', 3, true, 'dog']);
  *    [ 1, 2, 3, 4, 5, 'false' ]         => [ 1, 2, 3, 4, 5, 'false' ]
  *    [ false, 0, NaN, '', undefined ]   => [ ]
  */
+
+// JS
+
 function removeFalsyValues(arr) {
    const arrayOfTrulyValues = [];
    arr.forEach((item) => {
@@ -185,6 +188,15 @@ function removeFalsyValues(arr) {
 }
 
 removeFalsyValues([false, 0, NaN, '', undefined, 'cat', NaN, true, ''])
+
+// Lodash
+
+function removeFalsyValuesLo(arr) {
+  return _.compact(arr);
+}
+
+removeFalsyValuesLo([false, 0, NaN, '', undefined, 'cat', NaN, true, ''])
+
 
 /**
  * 7) Returns the array of useprcase strings from the specified array
