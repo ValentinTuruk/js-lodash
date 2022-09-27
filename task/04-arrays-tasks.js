@@ -138,6 +138,9 @@ getArrayOfPositivesLo([-1, 2, -5, -4, 0]);
  *    [ 1, 2, 3, 4, 5 ] => []
  *    [ 'cat, 'dog', 'raccon' ] => [ 'cat', 'dog', 'racoon' ]
  */
+
+// JS
+
 function getArrayOfStrings(arr) {
    const arrayOfStrings = [];
    arr.forEach((item) => {
@@ -149,6 +152,14 @@ function getArrayOfStrings(arr) {
 }
 
 getArrayOfStrings([0, 1, 'cat', 3, true, 'dog']);
+
+// Lodash
+
+function getArrayOfStringsLo(arr) {
+   return _.filter(arr, (i) => {return typeof (i) === 'string'})
+}
+
+getArrayOfStringsLo([0, 1, 'cat', 3, true, 'dog']);
 
 /**
  * 6) Removes falsy values from the specified array
