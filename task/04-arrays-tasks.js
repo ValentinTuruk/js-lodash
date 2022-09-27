@@ -103,6 +103,9 @@ doubleArrayLo(['Ace', 10, true]);
  *    [-1, 2, -5, -4, 0] => [ 2 ]
  *    [] => [] 
  */
+
+// JS
+
 function getArrayOfPositives(arr) {
    const positivArray = [];
    arr.forEach((item) => {
@@ -114,6 +117,15 @@ function getArrayOfPositives(arr) {
 }
 
 getArrayOfPositives([-1, 2, -5, -4, 0]);
+
+// Lodash
+
+function getArrayOfPositivesLo(arr) {
+   return _.filter(arr, (i) => {return i > 0})
+}
+
+getArrayOfPositivesLo([-1, 2, -5, -4, 0]);
+
 
 /**
  * 5) Returns the array with strings only in the specified array (in original order)
