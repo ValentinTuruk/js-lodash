@@ -366,11 +366,11 @@ toCsvText([
 
 // Lodash
 
-function toCsvText(arr) {
+function toCsvTextLo(arr) {
    return _.join(arr, ',')
 }
 
-toCsvText([
+toCsvTextLo([
    [0, 1, 2, 3, 4],
    [10, 11, 12, 13, 14],
    [20, 21, 22, 23, 24],
@@ -389,11 +389,26 @@ toCsvText([
  *   [ 0, 1, 2, 3, 4, 5 ] => [ 0, 1, 4, 9, 16, 25 ]
  *   [ 10, 100, -1 ]      => [ 100, 10000, 1 ]
  */
+
+// JS
+
 function toArrayOfSquares(arr) {
    return arr.map(item => item ** 2);
 }
 
 toArrayOfSquares([0, 1, 2, 3, 4, 5, 10, 100, -1]);
+
+// Lodash
+
+function toArrayOfSquaresLo(arr) {
+   function square(i) {
+      return i ** 2
+   }
+   return _.map(arr, square);
+}
+
+toArrayOfSquaresLo([0, 1, 2, 3, 4, 5, 10, 100, -1]);
+
 
 /**
  * 14) Transforms the numeric array to the according moving sum array:
