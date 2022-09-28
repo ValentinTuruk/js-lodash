@@ -1,5 +1,7 @@
 'use strict';
 
+const { isNumber } = require("lodash");
+
 /*********************************************************************************************
  *                                                                                           *
  * Plese read the following tutorial before implementing tasks:                              *
@@ -580,11 +582,23 @@ get3TopItemsLo([1, 2, 3, 4, 10, 5, 6, 7, 8, 9, 10]);
  *   [ null, 1, 'elephant' ] => 1
  *   [ 1, '2' ] => 1
  */
+
+// JS
+
 function getPositivesCount(arr) {
    return arr.filter(item => typeof (item) === 'number' && item > 0).length;
 }
 
 getPositivesCount([-1, 0, 1, null, 1, 'elephant', '2']);
+
+// Lodash
+
+function getPositivesCountLo(arr) {
+   return _.filter(arr, item => _.isNumber(item) && item > 0).length;
+}
+
+getPositivesCountLo([-1, 0, 1, null, 1, 'elephant', '2']);
+
 
 /** 
  * 19) Sorts digit names
