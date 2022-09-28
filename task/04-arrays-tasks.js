@@ -266,12 +266,14 @@ getStringsLengthLo(['', 'a', 'bc', 'def', 'ghij', 'react', 'ember'])
  *    [ 1, 3, 4, 5 ], 2, 1  => [ 1, 2, 3, 4, 5 ]
  *    [ 1, 'b', 'c'], 0, 'x'  => [ 'x', 1, 'b', 'c' ]
  */
+
 function insertItem(arr, item, index) {
    arr.splice(index, 0, item);
    return arr;
 }
 
 insertItem([1, 'b', 'c'], 'x', 0);
+
 
 /**
  * 10) Returns the n first items of the specified array
@@ -283,11 +285,22 @@ insertItem([1, 'b', 'c'], 'x', 0);
  *    [ 1, 3, 4, 5 ], 2  => [ 1, 2 ]
  *    [ 'a', 'b', 'c', 'd'], 3  => [ 'a', 'b', 'c' ]
  */
+
+// JS
+
 function getHead(arr, n) {
    return arr.slice(0, n)
 }
 
 getHead(['a', 'b', 'c', 'd'], 3);
+
+// Lodash
+
+function getHeadLo(arr, n) {
+   return _.take(arr, n);
+}
+
+getHeadLo(['a', 'b', 'c', 'd'], 3);
 
 /**
  * 11) Returns the n last items of the specified array
