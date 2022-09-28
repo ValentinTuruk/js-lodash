@@ -484,7 +484,7 @@ getSecondItems([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 'a', 'b', 'c', null])
 
 function getSecondItemsLo(arr) {
    return _.remove(arr, (item, index) => {
-     return index % 2 === 1
+      return index % 2 === 1
    });
 }
 
@@ -505,6 +505,9 @@ getSecondItemsLo([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 'a', 'b', 'c', null])
  *  [ 'a', 'b', 'c', null ] => [ 'a', 'b','b', 'c','c','c',  null,null,null,null ]
  *  [ 1,2,3,4,5 ] => [ 1, 2,2, 3,3,3, 4,4,4,4, 5,5,5,5,5 ]
  */
+
+// JS
+
 function propagateItemsByPositionIndex(arr) {
    let arrayOfArrays = []
    arr.forEach((item, index, array) => {
@@ -517,6 +520,20 @@ function propagateItemsByPositionIndex(arr) {
 }
 
 propagateItemsByPositionIndex(['a', 'b', 'c', null]);
+
+// Lodash
+
+function propagateItemsByPositionIndexLo(arr) {
+   const arrayOfArrays = _.map(arr, (item, index) => {
+      return _.fill(Array(index+1), item);
+   });
+
+   return _.flatten(arrayOfArrays);
+}
+
+propagateItemsByPositionIndexLo(['a', 'b', 'c', null]);
+
+
 
 
 /** 
