@@ -465,6 +465,9 @@ getMovingSumLo([10, -10, 10, -10, 10]);
  * [ 'a', 'b', 'c' , null ]  => [ "b", null ]
  * [ "a" ] => []
  */
+
+// JS
+
 function getSecondItems(arr) {
    const everySecond = [];
    arr.forEach((item, index) => {
@@ -476,6 +479,17 @@ function getSecondItems(arr) {
 }
 
 getSecondItems([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 'a', 'b', 'c', null])
+
+// Lodash
+
+function getSecondItemsLo(arr) {
+   return _.remove(arr, (item, index) => {
+     return index % 2 === 1
+   });
+}
+
+getSecondItemsLo([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 'a', 'b', 'c', null])
+
 
 /**
  * 16 )Propagates every item in sequence its position times
