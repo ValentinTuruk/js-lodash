@@ -312,11 +312,23 @@ getHeadLo(['a', 'b', 'c', 'd'], 3);
  *    [ 1, 3, 4, 5 ], 2  => [ 4, 5 ]
  *    [ 'a', 'b', 'c', 'd'], 3  => [ 'b', 'c', 'd' ]
  */
+
+// JS
+
 function getTail(arr, n) {
    return arr.slice(-n);
 }
 
 getTail(['a', 'b', 'c', 'd'], 3);
+
+// Lodash
+
+function getTail(arr, n) {
+   return _.takeRight(arr, n);
+}
+
+getTail(['a', 'b', 'c', 'd'], 3);
+
 
 /**
  * 12) Returns CSV represebtation of two-dimentional numeric array.
