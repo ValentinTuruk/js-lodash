@@ -525,14 +525,13 @@ propagateItemsByPositionIndex(['a', 'b', 'c', null]);
 
 function propagateItemsByPositionIndexLo(arr) {
    const arrayOfArrays = _.map(arr, (item, index) => {
-      return _.fill(Array(index+1), item);
+      return _.fill(Array(index + 1), item);
    });
 
    return _.flatten(arrayOfArrays);
 }
 
 propagateItemsByPositionIndexLo(['a', 'b', 'c', null]);
-
 
 
 
@@ -549,12 +548,24 @@ propagateItemsByPositionIndexLo(['a', 'b', 'c', null]);
  *   [ 1,2,3,4,5,6,7,8,9,10 ] => [ 10, 9, 8 ]
  *   [ 10, 10, 10, 10 ] => [ 10, 10, 10 ]
  */
+
+// JS 
+
 function get3TopItems(arr) {
    const topThreeAaaray = arr.sort((a, b) => b - a).slice(0, 3);
    return topThreeAaaray
 }
 
 get3TopItems([1, 2, 3, 4, 10, 5, 6, 7, 8, 9, 10]);
+
+// Lodash
+
+function get3TopItemsLo(arr) {
+   return _.take(arr.sort((a, b) => b - a), 3);
+}
+
+get3TopItemsLo([1, 2, 3, 4, 10, 5, 6, 7, 8, 9, 10]);
+
 
 /**  
  * 18) Returns the number of positive numbers from specified array
