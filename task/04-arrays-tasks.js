@@ -424,6 +424,9 @@ toArrayOfSquaresLo([0, 1, 2, 3, 4, 5, 10, 100, -1]);
  *   [ 0, 0, 0, 0, 0]         => [ 0, 0, 0, 0, 0] 
  *   [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ] => [ 1, 3, 6, 10, 15, 21, 28, 36, 45, 55 ]
  */
+
+// JS
+
 function getMovingSum(arr) {
    let arrayOfSums = [];
    let sum = 0;
@@ -435,6 +438,21 @@ function getMovingSum(arr) {
 }
 
 getMovingSum([10, -10, 10, -10, 10]);
+
+// Lodash
+
+function getMovingSumLo(arr) {
+   let arrayOfSums = [];
+   let sum = 0;
+   _.forEach(arr, (item) => {
+      sum += item
+      arrayOfSums.push(sum);
+   }, 0);
+   return (arrayOfSums);
+}
+
+getMovingSumLo([10, -10, 10, -10, 10]);
+
 
 /**
  * 15) Returns every second item from the specified array:
