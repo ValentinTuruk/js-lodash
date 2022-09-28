@@ -323,11 +323,11 @@ getTail(['a', 'b', 'c', 'd'], 3);
 
 // Lodash
 
-function getTail(arr, n) {
+function getTailLo(arr, n) {
    return _.takeRight(arr, n);
 }
 
-getTail(['a', 'b', 'c', 'd'], 3);
+getTailLo(['a', 'b', 'c', 'd'], 3);
 
 
 /**
@@ -350,8 +350,11 @@ getTail(['a', 'b', 'c', 'd'], 3);
  *    +'20,21,22,23,24\n'
  *    +'30,31,32,33,34'
  */
+
+// JS
+
 function toCsvText(arr) {
-   return arr.join('')
+   return arr.join(',');
 }
 
 toCsvText([
@@ -360,6 +363,20 @@ toCsvText([
    [20, 21, 22, 23, 24],
    [30, 31, 32, 33, 34]
 ]);
+
+// Lodash
+
+function toCsvText(arr) {
+   return _.join(arr, ',')
+}
+
+toCsvText([
+   [0, 1, 2, 3, 4],
+   [10, 11, 12, 13, 14],
+   [20, 21, 22, 23, 24],
+   [30, 31, 32, 33, 34]
+]);
+
 
 /**
  * 13) Transforms the numeric array into the according array of squares:
