@@ -1014,7 +1014,7 @@ const cityList = [
 
 
 // JS
-/*
+
 function group(array, keySelector, valueSelector) {
    const map = new Map();
 
@@ -1038,7 +1038,7 @@ group(cityList,
    item => item.country,
    item => item.city
 );
-*/
+
 // Lodash
 
 function groupLo(array, keySelector) {
@@ -1046,7 +1046,7 @@ function groupLo(array, keySelector) {
 }
 
 groupLo(cityList,
-   item => item.country  
+   item => item.country
 );
 
 /**
