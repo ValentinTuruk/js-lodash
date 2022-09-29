@@ -732,7 +732,7 @@ function findAllOccurences(arr, item) {
 
 findAllOccurences([true, 0, 1, 'true'], true);
 
-// Lodash
+// Lodash #1
 
 function findAllOccurencesLo(arr, item) {
    const baseLength = arr.length;
@@ -741,6 +741,15 @@ function findAllOccurencesLo(arr, item) {
 }
 
 findAllOccurencesLo([true, 0, 1, 'true'], true);
+
+// Lodash #2
+
+function findAllOccurencesLoTwo(arr, item) {
+   return _.countBy(arr, (i) => i === item)[true];
+}
+
+findAllOccurencesLoTwo([true, 0, 1, 'true'], true);
+
 
 
 /**
@@ -853,6 +862,9 @@ sortCitiesArrayLo(list);
  *           [0,0,0,1,0],
  *           [0,0,0,0,1]]   
  */
+
+// JS
+
 function getIdentityMatrix(n) {
    const array = new Array(n);
    array.fill(0);
@@ -869,6 +881,15 @@ function getIdentityMatrix(n) {
 }
 
 getIdentityMatrix(5);
+
+// Lodash
+
+function getIdentityMatrixLo(n) {
+
+}
+
+getIdentityMatrixLo(5);
+
 
 /**
  * 26) Creates an array of integers from the specified start to end (inclusive)
