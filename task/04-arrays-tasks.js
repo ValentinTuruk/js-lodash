@@ -1015,38 +1015,54 @@ const cityList = [
 
 // JS
 
-function group(array, keySelector, valueSelector) {
-   const map = new Map();
+// function group(array, keySelector, valueSelector) {
+//    const map = new Map();
 
-   array.forEach((item, index, array) => {
-      const country = keySelector(item);
-      const city = valueSelector(item);
-      if (!map.has(country)) {
-         map.set(country, city)
-      } else {
-         let arrayAddCity = [];
-         arrayAddCity.push(map.get(country));
-         arrayAddCity.push(city);
-         const flatArrayCities = arrayAddCity.flat(1);
-         map.set(country, flatArrayCities);
-      }
-   })
-   console.log(map);
-}
+//    array.forEach((item, index, array) => {
+//       const country = keySelector(item);
+//       const city = valueSelector(item);
+//       if (!map.has(country)) {
+//          map.set(country, city)
+//       } else {
+//          let arrayAddCity = [];
+//          arrayAddCity.push(map.get(country));
+//          arrayAddCity.push(city);
+//          const flatArrayCities = arrayAddCity.flat(1);
+//          map.set(country, flatArrayCities);
+//       }
+//    })
+//    console.log(map);
+// }
 
-group(cityList,
-   item => item.country,
-   item => item.city
-);
+// group(cityList,
+//    item => item.country,
+//    item => item.city
+// );
 
 // Lodash
 
-function groupLo(array, keySelector) {
-   return _.groupBy(array, keySelector);
+function groupLo(array, keySelector, valueSelector) {
+   const a = _.groupBy(array, keySelector);
+   const map = new Map();
+
+   _.forEach(a, (i) => {
+      const countryName = keySelector(i[0]);      
+      let cityNames = []
+
+      _.forEach(i, (item) => {
+         const city = valueSelector(item);
+         cityNames.push(city);
+      });
+
+      map.set(countryName, cityNames);
+   });
+
+   return map;
 }
 
 groupLo(cityList,
-   item => item.country
+   item => item.country,
+   item => item.city
 );
 
 /**
