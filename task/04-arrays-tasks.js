@@ -628,11 +628,11 @@ sortDigitNamesByNumericOrder(['one', 'one', 'one', 'zero', 'one', 'two', 'three'
 
 function sortDigitNamesByNumericOrderLo(arr) {
    const digitList = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
-   function sort (a,b) {
+   function sort(a, b) {
       return _.indexOf(digitList, a) - _.indexOf(digitList, b)
    }
    return _.sortBy(arr, sort);
-   
+
 }
 
 sortDigitNamesByNumericOrderLo(['one', 'one', 'one', 'zero', 'one', 'two', 'three', 'nine', 'eight', 'nine', 'eight']);
@@ -662,7 +662,7 @@ getItemsSum([1, 10, 100, 1000]);
 // Lodash
 
 function getItemsSumLo(arr) {
-   function sum (sum, item) {
+   function sum(sum, item) {
       return sum + item
    }
    return _.reduce(arr, sum, 0);
@@ -701,9 +701,9 @@ getFalsyValuesCount([-1, 'false', null, 0, 1, '', 3, null, undefined, NaN, false
 // Lodash
 
 function getFalsyValuesCountLo(arr) {
-const truthlyArray = _.compact(arr);
-const falsyArray = _.difference(arr, truthlyArray);
-return falsyArray.length;
+   const truthlyArray = _.compact(arr);
+   const falsyArray = _.difference(arr, truthlyArray);
+   return falsyArray.length;
 }
 
 getFalsyValuesCountLo([-1, 'false', null, 0, 1, '', 3, null, undefined, NaN, false, 0, '']);
@@ -723,11 +723,25 @@ getFalsyValuesCountLo([-1, 'false', null, 0, 1, '', 3, null, undefined, NaN, fal
  *    [ null, undefined, null ], null => 2 
  *    [ true, 0, 1, 'true' ], true => 1
  */
+
+// JS
+
 function findAllOccurences(arr, item) {
    return arr.filter(value => value === item).length;
 }
 
 findAllOccurences([true, 0, 1, 'true'], true);
+
+// Lodash
+
+function findAllOccurencesLo(arr, item) {
+   const baseLength = arr.length;
+   const lenthWithoutItem = _.pull(arr, item).length
+   return baseLength - lenthWithoutItem;
+}
+
+findAllOccurencesLo([true, 0, 1, 'true'], true);
+
 
 /**
  * 23) Concatenates all elements from specified array into single string with ',' delimeter  
