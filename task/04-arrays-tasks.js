@@ -1015,29 +1015,29 @@ const cityList = [
 
 // JS
 
-// function group(array, keySelector, valueSelector) {
-//    const map = new Map();
+function group(array, keySelector, valueSelector) {
+   const map = new Map();
 
-//    array.forEach((item, index, array) => {
-//       const country = keySelector(item);
-//       const city = valueSelector(item);
-//       if (!map.has(country)) {
-//          map.set(country, city)
-//       } else {
-//          let arrayAddCity = [];
-//          arrayAddCity.push(map.get(country));
-//          arrayAddCity.push(city);
-//          const flatArrayCities = arrayAddCity.flat(1);
-//          map.set(country, flatArrayCities);
-//       }
-//    })
-//    console.log(map);
-// }
+   array.forEach((item, index, array) => {
+      const country = keySelector(item);
+      const city = valueSelector(item);
+      if (!map.has(country)) {
+         map.set(country, city)
+      } else {
+         let arrayAddCity = [];
+         arrayAddCity.push(map.get(country));
+         arrayAddCity.push(city);
+         const flatArrayCities = arrayAddCity.flat(1);
+         map.set(country, flatArrayCities);
+      }
+   })
+   console.log(map);
+}
 
-// group(cityList,
-//    item => item.country,
-//    item => item.city
-// );
+group(cityList,
+   item => item.country,
+   item => item.city
+);
 
 // Lodash
 
@@ -1076,6 +1076,9 @@ groupLo(cityList,
  *   [[1, 2], [3, 4], [5, 6]], (x) => x     =>   [ 1, 2, 3, 4, 5, 6 ]
  *   ['one','two','three'], x=>x.split('')  =>   ['o','n','e','t','w','o','t','h','r','e','e']
  */
+
+// JS
+
 function selectMany(arr, childrenSelector) {
    const newArray = arr.map(childrenSelector);
    const flatArray = [].concat.apply([], newArray);
@@ -1083,6 +1086,15 @@ function selectMany(arr, childrenSelector) {
 }
 
 selectMany(['one', 'two', 'three'], x => x.split(''));
+
+// Lodash
+
+function selectManyLo(arr, childrenSelector) {
+   const newArray = _.map(arr, childrenSelector);
+   return _.flatten(newArray);
+}
+
+selectManyLo(['one', 'two', 'three'], x => x.split(''));
 
 /**
  * 30) Returns an element from the multidimentional array by the specified indexes.
@@ -1124,6 +1136,9 @@ getElementByIndexes([[[1, 2, 3]]], [0, 0, 1])
  *   [ 1, 2, 3, 4, 5, 6, 7, 8 ]   =>  [ 5, 6, 7, 8, 1, 2, 3, 4 ]   
  * 
  */
+
+// JS
+
 function swapHeadAndTail(arr) {
    let arrTailHead = arr.slice(Math.ceil(arr.length / 2));
 
@@ -1138,6 +1153,16 @@ function swapHeadAndTail(arr) {
 }
 
 swapHeadAndTail([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+
+// Lodash
+
+function swapHeadAndTailLo(arr) {
+   
+}
+
+swapHeadAndTailLo([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+
+
 
 module.exports = {
    findElement: findElement,
