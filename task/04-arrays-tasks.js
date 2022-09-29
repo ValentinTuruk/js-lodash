@@ -948,14 +948,26 @@ getIntervalArrayLo(-2, 27);
  *   [ 'a', 'a', 'a', 'a' ]  => [ 'a' ]
  *   [ 1, 1, 2, 2, 3, 3, 4, 4] => [ 1, 2, 3, 4]
  */
+
+// JS
+
 function distinct(arr) {
    const set = new Set(arr);
-   console.log(set);
    const arrayOfUnique = Array.from(set);
    return arrayOfUnique;
 }
 
 distinct([1, 1, 2, 2, 3, 3, 4, 4]);
+
+// Lodash
+
+function distinctLo(arr) {
+  return _.intersection(arr);
+}
+
+distinctLo([1, 1, 2, 2, 3, 3, 4, 4]);
+
+
 
 /**
  * 28) Groups elements of the specified array by key.
