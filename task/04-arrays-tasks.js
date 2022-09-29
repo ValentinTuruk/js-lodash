@@ -866,13 +866,11 @@ sortCitiesArrayLo(list);
 // JS
 
 function getIdentityMatrix(n) {
-   const array = new Array(n);
-   array.fill(0);
+   const array = Array(n).fill(0);
    const arrayOfArrays = new Array(n);
 
    array.forEach((item, index) => {
-      const childArray = new Array(n);
-      childArray.fill(0);
+      const childArray = Array(n).fill(0);
       childArray[index] = 1;
       arrayOfArrays[index] = childArray;
    })
@@ -885,7 +883,15 @@ getIdentityMatrix(5);
 // Lodash
 
 function getIdentityMatrixLo(n) {
+   const zeroArray = _.fill(Array(n), 0);
+   const arrayOfArrays = new Array(n);
 
+   _.forEach(zeroArray, (item, index) => {
+      const childArray = _.fill(Array(n), 0);
+      childArray[index] = 1;
+      arrayOfArrays[index] = childArray;
+   })
+   return arrayOfArrays;
 }
 
 getIdentityMatrixLo(5);
