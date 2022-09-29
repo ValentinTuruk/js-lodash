@@ -910,6 +910,9 @@ getIdentityMatrixLo(5);
  *     0, 100 => [ 0, 1, 2, ..., 100 ]
  *     3, 3   => [ 3 ]
  */
+
+// JS
+
 function getIntervalArray(start, end) {
    const arr = new Array(end - start + 1);
    arr.fill(0);
@@ -920,6 +923,19 @@ function getIntervalArray(start, end) {
 }
 
 getIntervalArray(-2, 27);
+
+// Lodash
+
+function getIntervalArrayLo(start, end) {
+   const arr = _.fill(Array(end - start + 1), 0);
+   const intervalArray = _.map(arr, (item, index) => {
+      return start + index;
+   })
+   return intervalArray
+}
+
+getIntervalArrayLo(-2, 27);
+
 
 /**
  * 27) Returns array containing only unique values from the specified array.
