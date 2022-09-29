@@ -1046,7 +1046,7 @@ function groupLo(array, keySelector, valueSelector) {
    const map = new Map();
 
    _.forEach(a, (i) => {
-      const countryName = keySelector(i[0]);      
+      const countryName = keySelector(i[0]);
       let cityNames = []
 
       _.forEach(i, (item) => {
@@ -1157,7 +1157,20 @@ swapHeadAndTail([1, 2, 3, 4, 5, 6, 7, 8, 9]);
 // Lodash
 
 function swapHeadAndTailLo(arr) {
-   
+   const headLenght = _.floor(_.divide(arr.length, 2))
+
+   if (arr.length % 2 === 0) {
+      return _.flatten(
+                _.reverse(
+                  _.chunk(arr, headLenght)));
+   } else {
+      const arrayBuilder = [];
+      arrayBuilder.push(_.takeRight(arr, headLenght));
+      arrayBuilder.push(_.nth(arr, headLenght));
+      arrayBuilder.push(_.take(arr, headLenght));
+      return _.flatten(arrayBuilder);
+   }
+
 }
 
 swapHeadAndTailLo([1, 2, 3, 4, 5, 6, 7, 8, 9]);
