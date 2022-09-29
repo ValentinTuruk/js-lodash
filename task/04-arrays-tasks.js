@@ -962,7 +962,10 @@ distinct([1, 1, 2, 2, 3, 3, 4, 4]);
 // Lodash
 
 function distinctLo(arr) {
-  return _.intersection(arr);
+   return _.uniq(arr);
+   /* secong way
+      return _.intersection(arr);
+   */
 }
 
 distinctLo([1, 1, 2, 2, 3, 3, 4, 4]);
@@ -999,6 +1002,19 @@ distinctLo([1, 1, 2, 2, 3, 3, 4, 4]);
  *    "Poland" => ["Lodz"]
  *   }
  */
+
+const cityList = [
+   { country: 'Belarus', city: 'Brest' },
+   { country: 'Russia', city: 'Omsk' },
+   { country: 'Russia', city: 'Samara' },
+   { country: 'Belarus', city: 'Grodno' },
+   { country: 'Belarus', city: 'Minsk' },
+   { country: 'Poland', city: 'Lodz' }
+];
+
+
+// JS
+/*
 function group(array, keySelector, valueSelector) {
    const map = new Map();
 
@@ -1018,18 +1034,20 @@ function group(array, keySelector, valueSelector) {
    console.log(map);
 }
 
-group([
-   { country: 'Belarus', city: 'Brest' },
-   { country: 'Russia', city: 'Omsk' },
-   { country: 'Russia', city: 'Samara' },
-   { country: 'Belarus', city: 'Grodno' },
-   { country: 'Belarus', city: 'Minsk' },
-   { country: 'Poland', city: 'Lodz' }
-],
+group(cityList,
    item => item.country,
    item => item.city
 );
+*/
+// Lodash
 
+function groupLo(array, keySelector) {
+   return _.groupBy(array, keySelector);
+}
+
+groupLo(cityList,
+   item => item.country  
+);
 
 /**
  * 29) Projects each element of the specified array to a sequence and flattens the resulting sequences into one array.
