@@ -613,6 +613,9 @@ getPositivesCountLo([-1, 0, 1, null, 1, 'elephant', '2']);
  *   [ 'nine','eight','nine','eight'] => [ 'eight','eight','nine','nine']
  *   [ 'one','one','one','zero' ]     => [ 'zero','one','one','one' ]
  */
+
+// JS
+
 function sortDigitNamesByNumericOrder(arr) {
    const digitList = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
    arr.sort((a, b) => digitList.indexOf(a) - digitList.indexOf(b));
@@ -620,6 +623,20 @@ function sortDigitNamesByNumericOrder(arr) {
 }
 
 sortDigitNamesByNumericOrder(['one', 'one', 'one', 'zero', 'one', 'two', 'three', 'nine', 'eight', 'nine', 'eight']);
+
+// Lodash
+
+function sortDigitNamesByNumericOrderLo(arr) {
+   const digitList = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+   function sort (a,b) {
+      _.indexOf(digitList, a) - _.indexOf(digitList, b)
+   }
+   return _.sortBy(arr, sort);
+   
+}
+
+sortDigitNamesByNumericOrderLo(['one', 'one', 'one', 'zero', 'one', 'two', 'three', 'nine', 'eight', 'nine', 'eight']);
+
 
 /** 
  * 20) Returns the sum of all items in the specified array of numbers
