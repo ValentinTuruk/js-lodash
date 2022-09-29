@@ -766,7 +766,7 @@ toStringList([0, false, 'cat', NaN, true, '']);
 // Lodash
 
 function toStringListLo(arr) {
-  return _.join(arr, ',')
+   return _.join(arr, ',')
 }
 
 toStringListLo([0, false, 'cat', NaN, true, '']);
@@ -796,6 +796,18 @@ toStringListLo([0, false, 'cat', NaN, true, '']);
  *      { country: 'Russia',  city: 'Moscow' },
  *      { country: 'Russia',  city: 'Saint Petersburg' }
  */
+
+const list = [
+   { country: 'Russia', city: 'Moscow' },
+   { country: 'Belarus', city: 'Minsk' },
+   { country: 'Poland', city: 'Warsaw' },
+   { country: 'Russia', city: 'Saint Petersburg' },
+   { country: 'Poland', city: 'Krakow' },
+   { country: 'Belarus', city: 'Brest' }
+]
+
+// JS
+
 function sortCitiesArray(arr) {
    return arr.sort((a, b) => {
       if (a.country > b.country) {
@@ -812,14 +824,16 @@ function sortCitiesArray(arr) {
    });
 }
 
-sortCitiesArray([
-   { country: 'Russia', city: 'Moscow' },
-   { country: 'Belarus', city: 'Minsk' },
-   { country: 'Poland', city: 'Warsaw' },
-   { country: 'Russia', city: 'Saint Petersburg' },
-   { country: 'Poland', city: 'Krakow' },
-   { country: 'Belarus', city: 'Brest' }
-]);
+sortCitiesArray(list);
+
+// Lodash
+
+function sortCitiesArrayLo(arr) {
+   return _.orderBy(arr, ['country', 'city'], ['asc', 'asc'])
+}
+
+sortCitiesArrayLo(list);
+
 
 /**
  * 25) Creates an indentity matrix of the specified size
