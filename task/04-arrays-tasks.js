@@ -629,7 +629,7 @@ sortDigitNamesByNumericOrder(['one', 'one', 'one', 'zero', 'one', 'two', 'three'
 function sortDigitNamesByNumericOrderLo(arr) {
    const digitList = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
    function sort (a,b) {
-      _.indexOf(digitList, a) - _.indexOf(digitList, b)
+      return _.indexOf(digitList, a) - _.indexOf(digitList, b)
    }
    return _.sortBy(arr, sort);
    
@@ -650,11 +650,26 @@ sortDigitNamesByNumericOrderLo(['one', 'one', 'one', 'zero', 'one', 'two', 'thre
  *   [ -1, 1, -1, 1 ]      => 0
  *   [ 1, 10, 100, 1000 ]  => 1111
  */
+
+// JS
+
 function getItemsSum(arr) {
    return arr.reduce((sum, item) => sum + item, 0);
 }
 
 getItemsSum([1, 10, 100, 1000]);
+
+// Lodash
+
+function getItemsSumLo(arr) {
+   function sum (sum, item) {
+      return sum + item
+   }
+   return _.reduce(arr, sum, 0);
+}
+
+getItemsSumLo([1, 10, 100, 1000]);
+
 
 /** 
  * 21) Returns the number of all falsy value in the specified array
