@@ -754,11 +754,23 @@ findAllOccurencesLo([true, 0, 1, 'true'], true);
  *    [1, 2, 3, 4, 5]                   => '1,2,3,4,5'
  *    ['rock', 'paper', 'scissors']     => 'rock,paper,scissors'
  */
+
+// JS
+
 function toStringList(arr) {
    return arr.join(',');
 }
 
 toStringList([0, false, 'cat', NaN, true, '']);
+
+// Lodash
+
+function toStringListLo(arr) {
+  return _.join(arr, ',')
+}
+
+toStringListLo([0, false, 'cat', NaN, true, '']);
+
 
 /**
  * 24) Sorts the specified array by country name first and city name (if countries are equal) in ascending order.
