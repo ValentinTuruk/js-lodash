@@ -683,6 +683,9 @@ getItemsSumLo([1, 10, 100, 1000]);
  *  [ -1, 'false', null, 0 ] => 2
  *  [ null, undefined, NaN, false, 0, '' ]  => 6
  */
+
+// JS
+
 function getFalsyValuesCount(arr) {
    const falsyValues = [];
    arr.forEach(item => {
@@ -694,6 +697,17 @@ function getFalsyValuesCount(arr) {
 }
 
 getFalsyValuesCount([-1, 'false', null, 0, 1, '', 3, null, undefined, NaN, false, 0, '']);
+
+// Lodash
+
+function getFalsyValuesCountLo(arr) {
+const truthlyArray = _.compact(arr);
+const falsyArray = _.difference(arr, truthlyArray);
+return falsyArray.length;
+}
+
+getFalsyValuesCountLo([-1, 'false', null, 0, 1, '', 3, null, undefined, NaN, false, 0, '']);
+
 
 /**
  * 22) Returns a number of all occurences of the specified item in an array  
