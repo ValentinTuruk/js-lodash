@@ -420,7 +420,7 @@ getDigitalRoot(165536);
 // Loldash
 
 function getDigitalRootLo(num) {
-    const sumForTaskEleveen = _.reduce(_.split(_.toString(num), ''), (sum, i) => sum + i);    
+    const sumForTaskEleveen = _.reduce(_.split(_.toString(num), ''), (sum, i) => sum + i);
     return sumForTaskEleveen > 9 ? getDigitalRoot(sumForTaskEleveen) : sumForTaskEleveen;
 }
 
@@ -589,9 +589,23 @@ timespanToHumanString(startDate, endDate);
  *    365, 4  => '11231'
  *    365, 10 => '365'
  */
+
+// JS
+
 function toNaryString(num, n) {
-    throw new Error('Not implemented');
+    return parseInt(num, 10).toString(n);
 }
+
+toNaryString(1024, 2)
+
+// Lodash
+
+function toNaryString(num, n) {
+    return _.parseInt(num, 10).toString(n);
+}
+
+toNaryString(1024, 2)
+
 
 
 /**
