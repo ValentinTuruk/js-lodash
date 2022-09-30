@@ -210,6 +210,9 @@ isInsideCircle({ center: { x: 0, y: 0 }, radius: 10 }, { x: 0, y: 0 });
  *   'abracadabra'  => 'c'
  *   'entente' => null
  */
+
+// JS
+
 function findFirstSingleChar(str) {
     let nonReapeated = [];
     for (let i = 0; i < str.length - 1; ++i) {
@@ -226,6 +229,22 @@ function findFirstSingleChar(str) {
 }
 
 findFirstSingleChar('entente');
+
+// Lodash
+
+function findFirstSingleCharLo(str) {
+    let uniqArray = _.uniq(_.split(str, ''));
+
+    for (i of uniqArray) {
+        const quantity = _.filter(str, (item) => item === i);
+        if (quantity.length === 1) return i;
+        if (quantity.length === 1) break;
+    }
+    return null;
+}
+
+findFirstSingleCharLo('entente');
+
 
 /**
  * 8) Returns the string representation of math interval, specified by two points and include / exclude flags.
