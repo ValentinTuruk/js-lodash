@@ -321,6 +321,9 @@ reverseStringLo('The quick brown fox jumps over the lazy dog');
  *   87354 => 45378
  *   34143 => 34143
  */
+
+// JS
+
 function reverseInteger(num) {
     const str = num.toString();
     let reverseString = '';
@@ -331,6 +334,18 @@ function reverseInteger(num) {
 }
 
 reverseInteger(87354);
+
+// Lodash
+
+function reverseIntegerLo(num) {
+    return _.toInteger(
+        _.join(
+            _.reverse(
+                _.split(
+                    _.toString(num), '')), ''));
+}
+
+reverseIntegerLo(87354);
 
 /**
  * 11) Validates the CCN (credit card number) and return true if CCN is valid
