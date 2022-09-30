@@ -287,6 +287,9 @@ getIntervalString(0, 1, true, true);
  * 'rotator' => 'rotator'
  * 'noon' => 'noon'
  */
+
+// JS
+
 function reverseString(str) {
     let reverseString = '';
     for (let i = str.length - 1; i >= 0; --i) {
@@ -296,6 +299,14 @@ function reverseString(str) {
 }
 
 reverseString('The quick brown fox jumps over the lazy dog');
+
+// Lodash
+
+function reverseStringLo(str) {
+    return _.join(_.reverse(_.split(str, '')), '')
+}
+
+reverseStringLo('The quick brown fox jumps over the lazy dog');
 
 
 /**
